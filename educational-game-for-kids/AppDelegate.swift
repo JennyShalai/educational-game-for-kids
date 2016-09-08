@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  educational-game-for-kids
 //
-//  Created by Flatiron School on 9/8/16.
+//  Created by Jenny Shalai on 9/8/16.
 //  Copyright © 2016 jennyshalai. All rights reserved.
 //
 
