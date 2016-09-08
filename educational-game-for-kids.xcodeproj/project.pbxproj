@@ -12,6 +12,12 @@
 		1B05F35C1D81BD94006B5B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35A1D81BD94006B5B90 /* Main.storyboard */; };
 		1B05F35E1D81BD94006B5B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35D1D81BD94006B5B90 /* Assets.xcassets */; };
 		1B05F3611D81BD94006B5B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */; };
+		1B05F36E1D81F952006B5B90 /* chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3681D81F952006B5B90 /* chicken.png */; };
+		1B05F36F1D81F952006B5B90 /* kuala.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3691D81F952006B5B90 /* kuala.png */; };
+		1B05F3701D81F952006B5B90 /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F36A1D81F952006B5B90 /* bear.png */; };
+		1B05F3711D81F952006B5B90 /* crocodile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F36B1D81F952006B5B90 /* crocodile.png */; };
+		1B05F3721D81F952006B5B90 /* raccoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F36C1D81F952006B5B90 /* raccoon.png */; };
+		1B05F3731D81F952006B5B90 /* monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F36D1D81F952006B5B90 /* monkey.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		1B05F35D1D81BD94006B5B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B05F3601D81BD94006B5B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B05F3621D81BD94006B5B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B05F3681D81F952006B5B90 /* chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicken.png; sourceTree = "<group>"; };
+		1B05F3691D81F952006B5B90 /* kuala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kuala.png; sourceTree = "<group>"; };
+		1B05F36A1D81F952006B5B90 /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
+		1B05F36B1D81F952006B5B90 /* crocodile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crocodile.png; sourceTree = "<group>"; };
+		1B05F36C1D81F952006B5B90 /* raccoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raccoon.png; sourceTree = "<group>"; };
+		1B05F36D1D81F952006B5B90 /* monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,12 @@
 				1B05F35D1D81BD94006B5B90 /* Assets.xcassets */,
 				1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */,
 				1B05F3621D81BD94006B5B90 /* Info.plist */,
+				1B05F3681D81F952006B5B90 /* chicken.png */,
+				1B05F3691D81F952006B5B90 /* kuala.png */,
+				1B05F36A1D81F952006B5B90 /* bear.png */,
+				1B05F36B1D81F952006B5B90 /* crocodile.png */,
+				1B05F36C1D81F952006B5B90 /* raccoon.png */,
+				1B05F36D1D81F952006B5B90 /* monkey.png */,
 			);
 			path = "educational-game-for-kids";
 			sourceTree = "<group>";
@@ -123,9 +141,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B05F36F1D81F952006B5B90 /* kuala.png in Resources */,
 				1B05F3611D81BD94006B5B90 /* LaunchScreen.storyboard in Resources */,
 				1B05F35E1D81BD94006B5B90 /* Assets.xcassets in Resources */,
 				1B05F35C1D81BD94006B5B90 /* Main.storyboard in Resources */,
+				1B05F3721D81F952006B5B90 /* raccoon.png in Resources */,
+				1B05F3711D81F952006B5B90 /* crocodile.png in Resources */,
+				1B05F3731D81F952006B5B90 /* monkey.png in Resources */,
+				1B05F36E1D81F952006B5B90 /* chicken.png in Resources */,
+				1B05F3701D81F952006B5B90 /* bear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +313,7 @@
 				1B05F3671D81BD94006B5B90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
