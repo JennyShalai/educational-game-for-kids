@@ -79,21 +79,28 @@ class ViewController: UIViewController {
             
             if CGRectIntersectsRect(bear.frame, bearShadow.frame) {
                 print("BEAR.")
-            }
-            if CGRectIntersectsRect(monkey.frame, monkeyShadow.frame) {
+            } else if CGRectIntersectsRect(monkey.frame, monkeyShadow.frame) {
                 print("monkey.")
-            }
-            if CGRectIntersectsRect(cuala.frame, cualaShadow.frame) {
+            } else if CGRectIntersectsRect(cuala.frame, cualaShadow.frame) {
                 print("cuala.")
-            }
-            if CGRectIntersectsRect(crocodile.frame, crocodileShadow.frame) {
+            } else if CGRectIntersectsRect(crocodile.frame, crocodileShadow.frame) {
                 print("crocodile.")
-            }
-            if CGRectIntersectsRect(raccoon.frame, raccoonShadow.frame) {
+            } else if CGRectIntersectsRect(raccoon.frame, raccoonShadow.frame) {
                 print("raccoon.")
-            }
-            if CGRectIntersectsRect(chicken.frame, chickenShadow.frame) {
+            } else if CGRectIntersectsRect(chicken.frame, chickenShadow.frame) {
                 print("chicken.")
+            } else if CGRectIntersectsRect(bear.frame, monkeyShadow.frame) || CGRectIntersectsRect(bear.frame, cualaShadow.frame) || CGRectIntersectsRect(bear.frame, crocodileShadow.frame) || CGRectIntersectsRect(bear.frame, raccoonShadow.frame) || CGRectIntersectsRect(bear.frame, chickenShadow.frame) {
+                print("BEAR WRONG.")
+            } else if CGRectIntersectsRect(monkey.frame, bearShadow.frame) || CGRectIntersectsRect(monkey.frame, cualaShadow.frame) || CGRectIntersectsRect(monkey.frame, crocodileShadow.frame) || CGRectIntersectsRect(monkey.frame, raccoonShadow.frame) || CGRectIntersectsRect(monkey.frame, chickenShadow.frame) {
+                print("BEAR MONKEY.")
+            } else if CGRectIntersectsRect(cuala.frame, monkeyShadow.frame) || CGRectIntersectsRect(cuala.frame, bearShadow.frame) || CGRectIntersectsRect(cuala.frame, crocodileShadow.frame) || CGRectIntersectsRect(cuala.frame, raccoonShadow.frame) || CGRectIntersectsRect(cuala.frame, chickenShadow.frame) {
+                print("BEAR CUALA.")
+            } else if CGRectIntersectsRect(crocodile.frame, monkeyShadow.frame) || CGRectIntersectsRect(crocodile.frame, cualaShadow.frame) || CGRectIntersectsRect(crocodile.frame, bearShadow.frame) || CGRectIntersectsRect(crocodile.frame, raccoonShadow.frame) || CGRectIntersectsRect(crocodile.frame, chickenShadow.frame) {
+                print("BEAR CROCODILE.")
+            } else if CGRectIntersectsRect(raccoon.frame, monkeyShadow.frame) || CGRectIntersectsRect(raccoon.frame, cualaShadow.frame) || CGRectIntersectsRect(raccoon.frame, crocodileShadow.frame) || CGRectIntersectsRect(raccoon.frame, bearShadow.frame) || CGRectIntersectsRect(raccoon.frame, chickenShadow.frame) {
+                print("BEAR RACCOON.")
+            } else if CGRectIntersectsRect(chicken.frame, monkeyShadow.frame) || CGRectIntersectsRect(chicken.frame, cualaShadow.frame) || CGRectIntersectsRect(chicken.frame, crocodileShadow.frame) || CGRectIntersectsRect(chicken.frame, raccoonShadow.frame) || CGRectIntersectsRect(chicken.frame, bearShadow.frame) {
+                print("BEAR CHICKEN.")
             }
         }
     }
