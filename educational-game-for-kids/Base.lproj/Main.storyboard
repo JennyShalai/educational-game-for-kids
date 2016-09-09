@@ -17,69 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-iM-v5j" userLabel="bearShadow">
-                                <rect key="frame" x="221" y="58" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chikenShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="LiL-fE-x6h" userLabel="chickenShadow">
+                                <rect key="frame" x="214" y="46" width="71" height="71"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LiL-fE-x6h" userLabel="chickenShadow">
-                                <rect key="frame" x="221" y="135" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crocodileShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-Lp-uhs" userLabel="crocodileShadow">
+                                <rect key="frame" x="211" y="169" width="76" height="77"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-Lp-uhs" userLabel="crocodileShadow">
-                                <rect key="frame" x="221" y="206" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-my-Mwq" userLabel="kualaShadow">
-                                <rect key="frame" x="221" y="276" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdV-hh-lvt" userLabel="monkeyShadow">
-                                <rect key="frame" x="221" y="353" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yfv-BD-hFh" userLabel="raccoonShadow">
-                                <rect key="frame" x="221" y="423" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bear.png" translatesAutoresizingMaskIntoConstraints="NO" id="opV-Oi-AJh" userLabel="bearImg">
-                                <rect key="frame" x="58" y="58" width="47" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoonShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yfv-BD-hFh" userLabel="raccoonShadow">
+                                <rect key="frame" x="211" y="433" width="75" height="70"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chicken.png" translatesAutoresizingMaskIntoConstraints="NO" id="iqC-kS-Tew" userLabel="chickenImg">
-                                <rect key="frame" x="58" y="135" width="47" height="44"/>
+                                <rect key="frame" x="34" y="169" width="71" height="71"/>
                                 <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crocodile.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePu-gy-Ghm" userLabel="crocodileImg">
-                                <rect key="frame" x="58" y="206" width="47" height="44"/>
+                                <rect key="frame" x="31" y="295" width="76" height="77"/>
                                 <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuala.png" translatesAutoresizingMaskIntoConstraints="NO" id="765-x0-ETZ" userLabel="kualaImg">
-                                <rect key="frame" x="51" y="276" width="61" height="44"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monkey.png" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-0p-rD1" userLabel="monkeyImg">
-                                <rect key="frame" x="51" y="353" width="61" height="44"/>
+                                <rect key="frame" x="20" y="47" width="100" height="70"/>
                                 <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-Lw-mtm" userLabel="raccoonImg">
-                                <rect key="frame" x="55" y="423" width="52" height="44"/>
+                                <rect key="frame" x="32" y="433" width="75" height="70"/>
                                 <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kualaShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-my-Mwq" userLabel="kualaShadow">
+                                <rect key="frame" x="199" y="299" width="100" height="70"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.85045797413793101" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="bear" destination="opV-Oi-AJh" id="brh-Wf-cgH"/>
-                        <outlet property="bearShadow" destination="mnS-iM-v5j" id="806-bZ-vLK"/>
                         <outlet property="chicken" destination="iqC-kS-Tew" id="BdQ-W3-xh4"/>
                         <outlet property="chickenShadow" destination="LiL-fE-x6h" id="6Y4-jd-hDa"/>
                         <outlet property="crocodile" destination="ePu-gy-Ghm" id="7GP-OW-jyC"/>
                         <outlet property="crocodileShadow" destination="fcT-Lp-uhs" id="hjt-nm-DKA"/>
                         <outlet property="cuala" destination="765-x0-ETZ" id="3n6-SI-ph8"/>
                         <outlet property="cualaShadow" destination="ymi-my-Mwq" id="y3G-U3-d7u"/>
-                        <outlet property="monkey" destination="fqv-0p-rD1" id="WO1-Ab-rag"/>
-                        <outlet property="monkeyShadow" destination="wdV-hh-lvt" id="RfM-eR-fjY"/>
                         <outlet property="raccoon" destination="gh4-Lw-mtm" id="KEX-iS-96q"/>
                         <outlet property="raccoonShadow" destination="Yfv-BD-hFh" id="hjy-ul-vIy"/>
                     </connections>
@@ -90,11 +70,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bear.png" width="174" height="152"/>
         <image name="chicken.png" width="173" height="181"/>
+        <image name="chikenShadow.png" width="173" height="181"/>
         <image name="crocodile.png" width="177" height="202"/>
+        <image name="crocodileShadow.png" width="177" height="202"/>
         <image name="kuala.png" width="246" height="141"/>
-        <image name="monkey.png" width="236" height="141"/>
+        <image name="kualaShadow.png" width="246" height="141"/>
         <image name="raccoon.png" width="181" height="150"/>
+        <image name="raccoonShadow.png" width="181" height="150"/>
     </resources>
 </document>
