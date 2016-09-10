@@ -20,6 +20,7 @@
 		1B05F3791D82F6C8006B5B90 /* kualaShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3761D82F6C8006B5B90 /* kualaShadow.png */; };
 		1B05F37A1D82F6C8006B5B90 /* crocodileShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3771D82F6C8006B5B90 /* crocodileShadow.png */; };
 		1B05F37B1D82F6C8006B5B90 /* raccoonShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3781D82F6C8006B5B90 /* raccoonShadow.png */; };
+		1BF4FDFE1D841F61006998A6 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1B05F3761D82F6C8006B5B90 /* kualaShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kualaShadow.png; sourceTree = "<group>"; };
 		1B05F3771D82F6C8006B5B90 /* crocodileShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crocodileShadow.png; sourceTree = "<group>"; };
 		1B05F3781D82F6C8006B5B90 /* raccoonShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raccoonShadow.png; sourceTree = "<group>"; };
+		1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				1B05F3561D81BD94006B5B90 /* AppDelegate.swift */,
 				1B05F3581D81BD94006B5B90 /* ViewController.swift */,
 				1B05F35A1D81BD94006B5B90 /* Main.storyboard */,
+				1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */,
 				1B05F35D1D81BD94006B5B90 /* Assets.xcassets */,
 				1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */,
 				1B05F3621D81BD94006B5B90 /* Info.plist */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF4FDFE1D841F61006998A6 /* ChoiceViewController.swift in Sources */,
 				1B05F3591D81BD94006B5B90 /* ViewController.swift in Sources */,
 				1B05F3571D81BD94006B5B90 /* AppDelegate.swift in Sources */,
 			);
