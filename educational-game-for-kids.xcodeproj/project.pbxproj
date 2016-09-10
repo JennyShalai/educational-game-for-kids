@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B05F3571D81BD94006B5B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05F3561D81BD94006B5B90 /* AppDelegate.swift */; };
-		1B05F3591D81BD94006B5B90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05F3581D81BD94006B5B90 /* ViewController.swift */; };
+		1B05F3591D81BD94006B5B90 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05F3581D81BD94006B5B90 /* AnimalsViewController.swift */; };
 		1B05F35C1D81BD94006B5B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35A1D81BD94006B5B90 /* Main.storyboard */; };
 		1B05F35E1D81BD94006B5B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35D1D81BD94006B5B90 /* Assets.xcassets */; };
 		1B05F3611D81BD94006B5B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */; };
@@ -21,12 +21,13 @@
 		1B05F37A1D82F6C8006B5B90 /* crocodileShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3771D82F6C8006B5B90 /* crocodileShadow.png */; };
 		1B05F37B1D82F6C8006B5B90 /* raccoonShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F3781D82F6C8006B5B90 /* raccoonShadow.png */; };
 		1BF4FDFE1D841F61006998A6 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */; };
+		1BF4FE021D844AAB006998A6 /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF4FE011D844AAB006998A6 /* NumbersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B05F3531D81BD94006B5B90 /* educational-game-for-kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "educational-game-for-kids.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B05F3561D81BD94006B5B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B05F3581D81BD94006B5B90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B05F3581D81BD94006B5B90 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		1B05F35B1D81BD94006B5B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B05F35D1D81BD94006B5B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B05F3601D81BD94006B5B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		1B05F3771D82F6C8006B5B90 /* crocodileShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crocodileShadow.png; sourceTree = "<group>"; };
 		1B05F3781D82F6C8006B5B90 /* raccoonShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raccoonShadow.png; sourceTree = "<group>"; };
 		1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
+		1BF4FE011D844AAB006998A6 /* NumbersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				1B05F3561D81BD94006B5B90 /* AppDelegate.swift */,
-				1B05F3581D81BD94006B5B90 /* ViewController.swift */,
 				1B05F35A1D81BD94006B5B90 /* Main.storyboard */,
+				1B05F3581D81BD94006B5B90 /* AnimalsViewController.swift */,
+				1BF4FE011D844AAB006998A6 /* NumbersViewController.swift */,
 				1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */,
 				1B05F35D1D81BD94006B5B90 /* Assets.xcassets */,
 				1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */,
@@ -172,7 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BF4FDFE1D841F61006998A6 /* ChoiceViewController.swift in Sources */,
-				1B05F3591D81BD94006B5B90 /* ViewController.swift in Sources */,
+				1BF4FE021D844AAB006998A6 /* NumbersViewController.swift in Sources */,
+				1B05F3591D81BD94006B5B90 /* AnimalsViewController.swift in Sources */,
 				1B05F3571D81BD94006B5B90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

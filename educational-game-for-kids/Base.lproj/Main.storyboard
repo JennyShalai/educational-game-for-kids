@@ -18,20 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuala.png" translatesAutoresizingMaskIntoConstraints="NO" id="9za-NL-u3n">
-                                <rect key="frame" x="43" y="48" width="140" height="279"/>
+                                <rect key="frame" x="40" y="112" width="294" height="181"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5">
-                                <rect key="frame" x="208" y="48" width="140" height="279"/>
+                                <rect key="frame" x="40" y="364" width="294" height="181"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-Sv-L3i">
-                                <rect key="frame" x="43" y="357" width="140" height="279"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZH-JK-nji">
-                                <rect key="frame" x="208" y="357" width="140" height="279"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,19 +31,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="animalsImg" destination="9za-NL-u3n" id="aHV-AQ-yi7"/>
-                        <outlet property="foodImg" destination="bOL-Sv-L3i" id="c6R-WK-vVM"/>
                         <outlet property="numbersImg" destination="a6q-jq-Wx5" id="Mn9-2d-dXv"/>
-                        <outlet property="vehicleImg" destination="IZH-JK-nji" id="l6N-od-kh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBC-Fa-Bj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-144.5" y="399.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Animals View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="educational_game_for_kids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AnimalsViewController" customModule="educational_game_for_kids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -110,6 +100,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324.5" y="399.5"/>
+        </scene>
+        <!--Numbers View Controller-->
+        <scene sceneID="mSp-fp-bkF">
+            <objects>
+                <viewController storyboardIdentifier="NumbersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nK1-aU-9mR" customClass="NumbersViewController" customModule="educational_game_for_kids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QMZ-Ig-MpJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XH4-4P-6KD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tlR-E5-9rA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cf-wF-vDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758.5" y="399.5"/>
         </scene>
     </scenes>
     <resources>

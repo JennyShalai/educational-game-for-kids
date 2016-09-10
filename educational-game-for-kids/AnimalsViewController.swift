@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class ViewController: UIViewController {
+class AnimalsViewController: UIViewController {
 
     
     
@@ -103,25 +103,25 @@ internal class ViewController: UIViewController {
             if CGRectIntersectsRect(cuala.frame, crocodileShadow.frame) || CGRectIntersectsRect(cuala.frame, raccoonShadow.frame) || CGRectIntersectsRect(cuala.frame, chickenShadow.frame) {
                 print("WRONG CUALA.")
                 self.cuala.frame.origin.x = 20
-                self.cuala.frame.origin.y = 282
+                self.cuala.frame.origin.y = 47
             }
             
             if CGRectIntersectsRect(crocodile.frame, cualaShadow.frame) || CGRectIntersectsRect(crocodile.frame, raccoonShadow.frame) || CGRectIntersectsRect(crocodile.frame, chickenShadow.frame) {
                 print("WRONG CROCODILE.")
-                self.crocodile.frame.origin.x = 20
-                self.crocodile.frame.origin.y = 191
+                self.crocodile.frame.origin.x = 31
+                self.crocodile.frame.origin.y = 295
             }
             
             if CGRectIntersectsRect(raccoon.frame, cualaShadow.frame) || CGRectIntersectsRect(raccoon.frame, crocodileShadow.frame) || CGRectIntersectsRect(raccoon.frame, chickenShadow.frame) {
                 print("WRONG RACCOON.")
-                self.raccoon.frame.origin.x = 20
-                self.raccoon.frame.origin.y = 442
+                self.raccoon.frame.origin.x = 32
+                self.raccoon.frame.origin.y = 433
             }
             
             if CGRectIntersectsRect(chicken.frame, cualaShadow.frame) || CGRectIntersectsRect(chicken.frame, crocodileShadow.frame) || CGRectIntersectsRect(chicken.frame, raccoonShadow.frame) {
                 print("WRONG CHICKEN.")
-                self.chicken.frame.origin.x = 20
-                self.chicken.frame.origin.y = 108
+                self.chicken.frame.origin.x = 34
+                self.chicken.frame.origin.y = 169
             }
         }
     }
