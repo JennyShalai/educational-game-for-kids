@@ -11,7 +11,7 @@ import UIKit
 class ChoiceViewController: UIViewController {
 
     @IBOutlet weak var animalsImg: UIImageView!
-    @IBOutlet weak var numbersImg: UIImageView!
+    @IBOutlet weak var fruitsImg: UIImageView!
     
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
@@ -28,27 +28,22 @@ class ChoiceViewController: UIViewController {
         animalsImageView.addGestureRecognizer(tapAnimalsGestureRecognizer)
         
         // set tap action for numbers image
-        let numbersImageView = self.numbersImg
-        let tapNumbersGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.numbersImageTapped(_:)))
+        let numbersImageView = self.fruitsImg
+        let tapFruitsGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.fruitsImageTapped(_:)))
         numbersImageView.userInteractionEnabled = true
-        numbersImageView.addGestureRecognizer(tapNumbersGestureRecognizer)
+        numbersImageView.addGestureRecognizer(tapFruitsGestureRecognizer)
         
     }
     
     func animalsImageTapped(img: AnyObject) {
-        print("ANIMALS WORK!")
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("AnimalsViewController") 
         self.presentViewController(nextViewController, animated:true, completion:nil)
     }
     
-    func numbersImageTapped(img: AnyObject) {
-        print("NUMBERS WORK!")
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("NumbersViewController")
+    func fruitsImageTapped(img: AnyObject) {
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("FruitsViewController")
         self.presentViewController(nextViewController, animated:true, completion:nil)
     }
-    
-
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

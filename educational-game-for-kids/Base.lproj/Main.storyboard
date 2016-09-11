@@ -21,7 +21,7 @@
                                 <rect key="frame" x="40" y="112" width="294" height="181"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5" userLabel="Fruits Img">
                                 <rect key="frame" x="40" y="364" width="294" height="181"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -31,7 +31,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="animalsImg" destination="9za-NL-u3n" id="aHV-AQ-yi7"/>
-                        <outlet property="numbersImg" destination="a6q-jq-Wx5" id="Mn9-2d-dXv"/>
+                        <outlet property="fruitsImg" destination="a6q-jq-Wx5" id="ePj-XU-VhE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBC-Fa-Bj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,37 +50,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chikenShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="LiL-fE-x6h" userLabel="chickenShadow">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chickenShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="LiL-fE-x6h" userLabel="chickenShadow">
                                 <rect key="frame" x="214" y="46" width="71" height="71"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crocodileShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-Lp-uhs" userLabel="crocodileShadow">
                                 <rect key="frame" x="211" y="169" width="76" height="77"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoonShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yfv-BD-hFh" userLabel="raccoonShadow">
                                 <rect key="frame" x="211" y="433" width="75" height="70"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chicken.png" translatesAutoresizingMaskIntoConstraints="NO" id="iqC-kS-Tew" userLabel="chickenImg">
                                 <rect key="frame" x="34" y="169" width="71" height="71"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crocodile.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePu-gy-Ghm" userLabel="crocodileImg">
                                 <rect key="frame" x="31" y="295" width="76" height="77"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuala.png" translatesAutoresizingMaskIntoConstraints="NO" id="765-x0-ETZ" userLabel="kualaImg">
-                                <rect key="frame" x="20" y="47" width="100" height="70"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuala.png" translatesAutoresizingMaskIntoConstraints="NO" id="765-x0-ETZ" userLabel="kualaImg">
+                                <rect key="frame" x="20" y="47" width="110" height="70"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-Lw-mtm" userLabel="raccoonImg">
                                 <rect key="frame" x="32" y="433" width="75" height="70"/>
-                                <color key="backgroundColor" red="0.46218681335449219" green="0.94240599870681763" blue="0.080979548394680023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kualaShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-my-Mwq" userLabel="kualaShadow">
                                 <rect key="frame" x="199" y="299" width="100" height="70"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="324.5" y="399.5"/>
         </scene>
-        <!--Numbers View Controller-->
+        <!--Fruits View Controller-->
         <scene sceneID="mSp-fp-bkF">
             <objects>
-                <viewController storyboardIdentifier="NumbersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nK1-aU-9mR" customClass="NumbersViewController" customModule="educational_game_for_kids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FruitsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nK1-aU-9mR" customClass="FruitsViewController" customModule="educational_game_for_kids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QMZ-Ig-MpJ"/>
                         <viewControllerLayoutGuide type="bottom" id="XH4-4P-6KD"/>
@@ -112,9 +108,51 @@
                     <view key="view" contentMode="scaleToFill" id="tlR-E5-9rA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bk4-ka-ZS9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avocado.png" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-F8-2b9" userLabel="avocadoImg">
+                                        <rect key="frame" x="45" y="42" width="81" height="82"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="J5t-CH-b2W" userLabel="orangeImg">
+                                        <rect key="frame" x="45" y="172" width="81" height="81"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fruit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cwk-57-ODB" userLabel="fruitImg">
+                                        <rect key="frame" x="45" y="298" width="81" height="81"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="berry.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cpv-m2-GbT" userLabel="berryImg">
+                                        <rect key="frame" x="50" y="421" width="71" height="90"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="berryShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="N8K-MD-st0" userLabel="berryShadowImg">
+                                        <rect key="frame" x="234" y="294" width="71" height="90"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fruitShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-v3-06A" userLabel="fruitShadowImg">
+                                        <rect key="frame" x="229" y="43" width="81" height="81"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avocadoShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-pR-nzK" userLabel="avocadoShadowImg">
+                                        <rect key="frame" x="229" y="172" width="81" height="82"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orangeShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="9rM-bO-M6J" userLabel="orangeShadowImg">
+                                        <rect key="frame" x="229" y="425" width="81" height="81"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="avocadoImg" destination="fHW-F8-2b9" id="dD3-xr-AGu"/>
+                        <outlet property="avocadoShadowImg" destination="p2D-pR-nzK" id="HFF-IT-PkH"/>
+                        <outlet property="berryImg" destination="Cpv-m2-GbT" id="AKH-qk-1x5"/>
+                        <outlet property="berryShadowImg" destination="N8K-MD-st0" id="jTl-J0-LzW"/>
+                        <outlet property="fruitImg" destination="Cwk-57-ODB" id="kvg-Ma-sPg"/>
+                        <outlet property="fruitShadowImg" destination="cC2-v3-06A" id="xhC-6Y-shB"/>
+                        <outlet property="orangeImg" destination="J5t-CH-b2W" id="rGW-Fy-Gib"/>
+                        <outlet property="orangeShadowImg" destination="9rM-bO-M6J" id="LGh-sm-RYF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cf-wF-vDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,13 +160,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chicken.png" width="173" height="181"/>
-        <image name="chikenShadow.png" width="173" height="181"/>
-        <image name="crocodile.png" width="177" height="202"/>
-        <image name="crocodileShadow.png" width="177" height="202"/>
-        <image name="kuala.png" width="246" height="141"/>
-        <image name="kualaShadow.png" width="246" height="141"/>
-        <image name="raccoon.png" width="181" height="150"/>
-        <image name="raccoonShadow.png" width="181" height="150"/>
+        <image name="avocado.png" width="273" height="320"/>
+        <image name="avocadoShadow.png" width="273" height="320"/>
+        <image name="berry.png" width="288" height="366"/>
+        <image name="berryShadow.png" width="288" height="366"/>
+        <image name="chicken.png" width="325" height="349"/>
+        <image name="chickenShadow.png" width="325" height="349"/>
+        <image name="crocodile.png" width="329" height="390"/>
+        <image name="crocodileShadow.png" width="329" height="390"/>
+        <image name="fruit.png" width="355" height="330"/>
+        <image name="fruitShadow.png" width="355" height="330"/>
+        <image name="kuala.png" width="478" height="269"/>
+        <image name="kualaShadow.png" width="478" height="269"/>
+        <image name="orange.png" width="313" height="312"/>
+        <image name="orangeShadow.png" width="313" height="312"/>
+        <image name="raccoon.png" width="330" height="284"/>
+        <image name="raccoonShadow.png" width="330" height="284"/>
     </resources>
 </document>
