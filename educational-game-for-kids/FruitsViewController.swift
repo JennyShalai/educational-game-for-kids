@@ -22,10 +22,15 @@ class FruitsViewController: UIViewController {
     @IBOutlet weak var fruitShadowImg: UIImageView!
     @IBOutlet weak var avocadoShadowImg: UIImageView!
     
+    var isAvocadoMetch: Bool = false
+    var isOrangeMetch: Bool = false
+    var isFruitMetch: Bool = false
+    var isBarryMetch: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(self.view.frame.height) \(self.view.frame.width)")
         
+        print("\(self.view.frame.height) \(self.view.frame.width)")
         print("avocado \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
         print("orange \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
         print("fruit \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
@@ -74,6 +79,7 @@ class FruitsViewController: UIViewController {
                 print("AVOCADO.")
                 self.avocadoImg.center = self.avocadoShadowImg.center
                 self.avocadoShadowImg.hidden = true
+                self.isAvocadoMetch = true
                 
             }
             
@@ -81,6 +87,7 @@ class FruitsViewController: UIViewController {
                 print("ORANGE.")
                 self.orangeImg.center = self.orangeShadowImg.center
                 self.orangeShadowImg.hidden = true
+                self.isOrangeMetch = true
                 
             }
             
@@ -88,13 +95,14 @@ class FruitsViewController: UIViewController {
                 print("FRUIT.")
                 self.fruitImg.center = self.fruitShadowImg.center
                 self.fruitShadowImg.hidden = true
+                self.isFruitMetch = true
             }
             
             if CGRectIntersectsRect(berryImg.frame, berryShadowImg.frame) {
                 print("BERRY.")
                 self.berryImg.center = self.berryShadowImg.center
                 self.berryShadowImg.hidden = true
-                
+                self.isBarryMetch = true
             }
             
             
