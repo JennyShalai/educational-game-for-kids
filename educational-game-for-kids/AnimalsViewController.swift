@@ -10,7 +10,7 @@ import UIKit
 
 class AnimalsViewController: UIViewController {
 
-    
+    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     @IBOutlet weak var chicken: UIImageView!
     @IBOutlet weak var crocodile: UIImageView!
@@ -182,6 +182,10 @@ class AnimalsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func doneButtonTapped(sender: AnyObject) {
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ChoiceViewController")
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    }
+    
 }
 

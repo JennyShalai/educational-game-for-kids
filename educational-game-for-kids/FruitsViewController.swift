@@ -9,7 +9,8 @@
 import UIKit
 
 class FruitsViewController: UIViewController {
-
+    
+    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     @IBOutlet weak var avocadoImg: UIImageView!
     @IBOutlet weak var orangeImg: UIImageView!
@@ -178,5 +179,9 @@ class FruitsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneButtonTapped(sender: AnyObject) {
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ChoiceViewController")
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    }
     
 }

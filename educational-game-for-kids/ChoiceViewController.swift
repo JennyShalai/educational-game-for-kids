@@ -9,15 +9,34 @@
 import UIKit
 
 class ChoiceViewController: UIViewController {
-
+    
+    @IBOutlet weak var leftView: UIView!
+    @IBOutlet weak var rightView: UIView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var animalsImg: UIImageView!
     @IBOutlet weak var fruitsImg: UIImageView!
+    @IBOutlet weak var logoImg: UIImageView!
+    
+    let kCornerRadius: CGFloat = 30
     
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUIandZPositions()
         self.setGestures()
+        
+    }
+    
+    func setUIandZPositions() {
+        //self.textView.layer.cornerRadius = kCornerRadius
+        self.textView.textAlignment = .Center
+        self.logoImg.layer.zPosition = 2
+        self.leftView.layer.zPosition = 1
+        self.rightView.layer.zPosition = 1
+        self.animalsImg.layer.zPosition = 2
+        self.fruitsImg.layer.zPosition = 2
+        self.textView.layer.zPosition = 2
     }
     
     func setGestures() {

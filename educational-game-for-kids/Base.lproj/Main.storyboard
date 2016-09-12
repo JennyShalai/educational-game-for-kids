@@ -8,7 +8,7 @@
         <!--Choice View Controller-->
         <scene sceneID="CDs-Kj-RBs">
             <objects>
-                <viewController id="Cfq-IG-Loh" customClass="ChoiceViewController" customModule="educational_game_for_kids" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChoiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cfq-IG-Loh" customClass="ChoiceViewController" customModule="educational_game_for_kids" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nMh-8B-pre"/>
                         <viewControllerLayoutGuide type="bottom" id="yqI-8X-eeN"/>
@@ -17,14 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuala.png" translatesAutoresizingMaskIntoConstraints="NO" id="9za-NL-u3n">
-                                <rect key="frame" x="40" y="112" width="294" height="181"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bwb-cL-GwU" userLabel="leftView">
+                                <rect key="frame" x="0.0" y="0.0" width="187" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9za-NL-u3n">
+                                        <rect key="frame" x="21" y="375" width="149" height="146"/>
+                                        <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0pC-7F-qyA">
+                                <rect key="frame" x="24" y="38" width="342" height="66"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5" userLabel="Fruits Img">
-                                <rect key="frame" x="40" y="364" width="294" height="181"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sN-TD-hYG">
+                                <rect key="frame" x="23" y="117" width="329" height="104"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The Match Shapes is a puzzle game where you need to place a picture into it's shadow. Choose animals or fruits to match help them match. Good luck!</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" red="0.2784313725" green="0.22352941179999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="ComicSansMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-2g-LQs" userLabel="rightView">
+                                <rect key="frame" x="187" y="0.0" width="188" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5" userLabel="Fruits Img">
+                                        <rect key="frame" x="20" y="375" width="146" height="145"/>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -32,6 +62,10 @@
                     <connections>
                         <outlet property="animalsImg" destination="9za-NL-u3n" id="aHV-AQ-yi7"/>
                         <outlet property="fruitsImg" destination="a6q-jq-Wx5" id="ePj-XU-VhE"/>
+                        <outlet property="leftView" destination="Bwb-cL-GwU" id="zYh-Ev-Fh6"/>
+                        <outlet property="logoImg" destination="0pC-7F-qyA" id="fgQ-A1-bUe"/>
+                        <outlet property="rightView" destination="o8f-2g-LQs" id="5nH-No-vq1"/>
+                        <outlet property="textView" destination="4sN-TD-hYG" id="4c5-NP-psQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBC-Fa-Bj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,32 +84,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lA-CC-LVp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Match the Animals" id="7cp-ae-hxd">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="889-Th-OBH">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="BYZ-38-t0r" id="Pjf-N8-VdL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="bxS-pT-fM0"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chickenShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="LiL-fE-x6h" userLabel="chickenShadow">
-                                <rect key="frame" x="214" y="46" width="71" height="71"/>
+                                <rect key="frame" x="257" y="105" width="71" height="71"/>
                                 <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crocodileShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-Lp-uhs" userLabel="crocodileShadow">
-                                <rect key="frame" x="211" y="169" width="76" height="77"/>
+                                <rect key="frame" x="254" y="225" width="76" height="77"/>
                                 <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoonShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yfv-BD-hFh" userLabel="raccoonShadow">
-                                <rect key="frame" x="211" y="433" width="75" height="70"/>
+                                <rect key="frame" x="254" y="492" width="75" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chicken.png" translatesAutoresizingMaskIntoConstraints="NO" id="iqC-kS-Tew" userLabel="chickenImg">
-                                <rect key="frame" x="34" y="169" width="71" height="71"/>
+                                <rect key="frame" x="34" y="228" width="71" height="71"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crocodile.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePu-gy-Ghm" userLabel="crocodileImg">
-                                <rect key="frame" x="31" y="295" width="76" height="77"/>
+                                <rect key="frame" x="31" y="354" width="76" height="77"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kuala.png" translatesAutoresizingMaskIntoConstraints="NO" id="765-x0-ETZ" userLabel="kualaImg">
-                                <rect key="frame" x="20" y="47" width="110" height="70"/>
+                                <rect key="frame" x="20" y="106" width="110" height="70"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-Lw-mtm" userLabel="raccoonImg">
-                                <rect key="frame" x="32" y="433" width="75" height="70"/>
+                                <rect key="frame" x="32" y="492" width="75" height="70"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kualaShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-my-Mwq" userLabel="kualaShadow">
-                                <rect key="frame" x="199" y="299" width="100" height="70"/>
+                                <rect key="frame" x="242" y="358" width="100" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
@@ -95,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324.5" y="399.5"/>
+            <point key="canvasLocation" x="300.5" y="399.5"/>
         </scene>
         <!--Fruits View Controller-->
         <scene sceneID="mSp-fp-bkF">
@@ -113,28 +160,41 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avocado.png" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-F8-2b9" userLabel="avocadoImg">
-                                        <rect key="frame" x="45" y="42" width="81" height="82"/>
+                                        <rect key="frame" x="41" y="99" width="81" height="82"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="J5t-CH-b2W" userLabel="orangeImg">
-                                        <rect key="frame" x="45" y="172" width="81" height="81"/>
+                                        <rect key="frame" x="41" y="229" width="81" height="81"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fruit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cwk-57-ODB" userLabel="fruitImg">
-                                        <rect key="frame" x="45" y="298" width="81" height="81"/>
+                                        <rect key="frame" x="41" y="355" width="81" height="81"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="berry.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cpv-m2-GbT" userLabel="berryImg">
-                                        <rect key="frame" x="50" y="421" width="71" height="90"/>
+                                        <rect key="frame" x="46" y="478" width="71" height="90"/>
                                     </imageView>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVq-30-e29">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem title="Match Fruits" id="fiX-9J-PdE">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="done" id="nP7-RU-91E">
+                                                    <connections>
+                                                        <action selector="doneButtonTapped:" destination="nK1-aU-9mR" id="fFa-hE-39h"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4VQ-f1-MhV"/>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="berryShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="N8K-MD-st0" userLabel="berryShadowImg">
-                                        <rect key="frame" x="234" y="294" width="71" height="90"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fruitShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-v3-06A" userLabel="fruitShadowImg">
-                                        <rect key="frame" x="229" y="43" width="81" height="81"/>
+                                        <rect key="frame" x="259" y="351" width="71" height="90"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avocadoShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-pR-nzK" userLabel="avocadoShadowImg">
-                                        <rect key="frame" x="229" y="172" width="81" height="82"/>
+                                        <rect key="frame" x="254" y="229" width="81" height="82"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fruitShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-v3-06A" userLabel="fruitShadowImg">
+                                        <rect key="frame" x="254" y="99" width="81" height="81"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orangeShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="9rM-bO-M6J" userLabel="orangeShadowImg">
-                                        <rect key="frame" x="229" y="425" width="81" height="81"/>
+                                        <rect key="frame" x="254" y="482" width="81" height="81"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,6 +232,7 @@
         <image name="fruitShadow.png" width="355" height="330"/>
         <image name="kuala.png" width="478" height="269"/>
         <image name="kualaShadow.png" width="478" height="269"/>
+        <image name="logo.png" width="600" height="120"/>
         <image name="orange.png" width="313" height="312"/>
         <image name="orangeShadow.png" width="313" height="312"/>
         <image name="raccoon.png" width="330" height="284"/>

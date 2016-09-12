@@ -34,6 +34,7 @@
 		1BF4FE691D85A6DB006998A6 /* berryShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF4FE611D85A6DB006998A6 /* berryShadow.png */; };
 		1BF4FE6A1D85A6DB006998A6 /* fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF4FE621D85A6DB006998A6 /* fruit.png */; };
 		1BF4FE6B1D85A6DB006998A6 /* fruitShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF4FE631D85A6DB006998A6 /* fruitShadow.png */; };
+		1BF4FE6D1D863875006998A6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF4FE6C1D863875006998A6 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		1BF4FE611D85A6DB006998A6 /* berryShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berryShadow.png; sourceTree = "<group>"; };
 		1BF4FE621D85A6DB006998A6 /* fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fruit.png; sourceTree = "<group>"; };
 		1BF4FE631D85A6DB006998A6 /* fruitShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fruitShadow.png; sourceTree = "<group>"; };
+		1BF4FE6C1D863875006998A6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1B05F35D1D81BD94006B5B90 /* Assets.xcassets */,
 				1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */,
 				1B05F3621D81BD94006B5B90 /* Info.plist */,
+				1BF4FE6C1D863875006998A6 /* logo.png */,
 				1BF4FE441D85A37A006998A6 /* raccoon.png */,
 				1BF4FE451D85A37A006998A6 /* bearShadow.png */,
 				1BF4FE461D85A37A006998A6 /* crocodile.png */,
@@ -209,6 +212,7 @@
 				1BF4FE5B1D85A37A006998A6 /* monkey.png in Resources */,
 				1BF4FE681D85A6DB006998A6 /* berry.png in Resources */,
 				1BF4FE501D85A37A006998A6 /* raccoon.png in Resources */,
+				1BF4FE6D1D863875006998A6 /* logo.png in Resources */,
 				1BF4FE651D85A6DB006998A6 /* avocadoShadow.png in Resources */,
 				1BF4FE581D85A37A006998A6 /* raccoonShadow.png in Resources */,
 				1BF4FE671D85A6DB006998A6 /* orangeShadow.png in Resources */,
