@@ -14,24 +14,34 @@
                         <viewControllerLayoutGuide type="bottom" id="yqI-8X-eeN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Of3-Dt-v6F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bwb-cL-GwU" userLabel="leftView">
-                                <rect key="frame" x="0.0" y="0.0" width="187" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="480"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raccoon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9za-NL-u3n">
-                                        <rect key="frame" x="21" y="375" width="149" height="146"/>
+                                        <rect key="frame" x="6" y="263" width="149" height="146"/>
                                         <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-2g-LQs" userLabel="rightView">
+                                <rect key="frame" x="160" y="0.0" width="160" height="480"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5" userLabel="Fruits Img">
+                                        <rect key="frame" x="7" y="260" width="146" height="145"/>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0pC-7F-qyA">
                                 <rect key="frame" x="24" y="38" width="342" height="66"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sN-TD-hYG">
-                                <rect key="frame" x="23" y="117" width="329" height="104"/>
+                                <rect key="frame" x="-5" y="117" width="330" height="104"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">The Match Shapes is a puzzle game where you need to place a picture into it's shadow. Choose animals or fruits to match help them match. Good luck!</string>
@@ -45,20 +55,10 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-2g-LQs" userLabel="rightView">
-                                <rect key="frame" x="187" y="0.0" width="188" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-jq-Wx5" userLabel="Fruits Img">
-                                        <rect key="frame" x="20" y="375" width="146" height="145"/>
-                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="animalsImg" destination="9za-NL-u3n" id="aHV-AQ-yi7"/>
                         <outlet property="fruitsImg" destination="a6q-jq-Wx5" id="ePj-XU-VhE"/>

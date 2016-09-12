@@ -23,12 +23,69 @@ class ChoiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUIandZPositions()
+        self.setConstraints()
+        self.setZPositions()
         self.setGestures()
         
     }
     
-    func setUIandZPositions() {
+    func setConstraints() {
+        
+        self.view.removeConstraints(self.view.constraints)
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        // leftView yellow side 
+        self.leftView.removeConstraints(self.leftView.constraints)
+        self.leftView.translatesAutoresizingMaskIntoConstraints = false
+        self.leftView.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
+        self.leftView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
+        self.leftView.heightAnchor.constraintEqualToAnchor(self.view.heightAnchor, multiplier: 1.0).active = true
+        self.leftView.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor, multiplier: 0.5).active = true
+    
+        // leftView red side 
+        self.rightView.removeConstraints(self.rightView.constraints)
+        self.rightView.translatesAutoresizingMaskIntoConstraints = false
+        self.rightView.rightAnchor.constraintEqualToAnchor(self.view.rightAnchor).active = true
+        self.rightView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
+        self.rightView.heightAnchor.constraintEqualToAnchor(self.view.heightAnchor, multiplier: 1.0).active = true
+        self.rightView.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor, multiplier: 0.5).active = true
+    
+        // logo
+        self.logoImg.removeConstraints(self.logoImg.constraints)
+        self.logoImg.translatesAutoresizingMaskIntoConstraints = false
+        self.logoImg.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
+        self.logoImg.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 40).active = true
+        self.logoImg.heightAnchor.constraintEqualToConstant(60).active = true
+        self.logoImg.widthAnchor.constraintEqualToConstant(300).active = true
+        
+        // text
+        self.textView.removeConstraints(self.textView.constraints)
+        self.textView.translatesAutoresizingMaskIntoConstraints = false
+        self.textView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
+        self.textView.topAnchor.constraintEqualToAnchor(self.logoImg.bottomAnchor, constant: 10).active = true
+        self.textView.heightAnchor.constraintEqualToConstant(360).active = true
+        self.textView.widthAnchor.constraintEqualToConstant(300).active = true
+        
+        // animals image
+        self.animalsImg.removeConstraints(self.animalsImg.constraints)
+        self.animalsImg.translatesAutoresizingMaskIntoConstraints = false
+        self.animalsImg.centerXAnchor.constraintEqualToAnchor(self.leftView.centerXAnchor).active = true
+        self.animalsImg.centerYAnchor.constraintEqualToAnchor(self.leftView.centerYAnchor, constant: 100).active = true
+        self.animalsImg.heightAnchor.constraintEqualToConstant(140).active = true
+        self.animalsImg.widthAnchor.constraintEqualToConstant(140).active = true
+        
+        // fruits image
+        self.fruitsImg.removeConstraints(self.animalsImg.constraints)
+        self.fruitsImg.translatesAutoresizingMaskIntoConstraints = false
+        self.fruitsImg.centerXAnchor.constraintEqualToAnchor(self.rightView.centerXAnchor).active = true
+        self.fruitsImg.centerYAnchor.constraintEqualToAnchor(self.rightView.centerYAnchor, constant: 100).active = true
+        self.fruitsImg.heightAnchor.constraintEqualToConstant(140).active = true
+        self.fruitsImg.widthAnchor.constraintEqualToConstant(140).active = true
+    
+    }
+    
+    func setZPositions() {
         //self.textView.layer.cornerRadius = kCornerRadius
         self.textView.textAlignment = .Center
         self.logoImg.layer.zPosition = 2
