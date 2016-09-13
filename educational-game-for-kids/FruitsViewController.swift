@@ -228,6 +228,7 @@ class FruitsViewController: UIViewController {
             self.avocadoImg.center = self.avocadoShadowImg.center
             self.avocadoShadowImg.hidden = true
             self.isAvocadoMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(orangeImg.frame, orangeShadowImg.frame) {
@@ -235,6 +236,7 @@ class FruitsViewController: UIViewController {
             self.orangeImg.center = self.orangeShadowImg.center
             self.orangeShadowImg.hidden = true
             self.isOrangeMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(fruitImg.frame, fruitShadowImg.frame) {
@@ -242,6 +244,7 @@ class FruitsViewController: UIViewController {
             self.fruitImg.center = self.fruitShadowImg.center
             self.fruitShadowImg.hidden = true
             self.isFruitMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(berryImg.frame, berryShadowImg.frame) {
@@ -249,6 +252,7 @@ class FruitsViewController: UIViewController {
             self.berryImg.center = self.berryShadowImg.center
             self.berryShadowImg.hidden = true
             self.isBerryMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(avocadoImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(avocadoImg.frame, fruitShadowImg.frame) || CGRectIntersectsRect(avocadoImg.frame, berryShadowImg.frame) {
@@ -276,6 +280,14 @@ class FruitsViewController: UIViewController {
         }
     }
     
+    func matchValidation() {
+        // checking are all fruits matching with their shadows
+        if self.isAvocadoMatch && self.isOrangeMatch && self.isFruitMatch && self.isBerryMatch {
+            print("MATCH")
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -292,5 +304,9 @@ class FruitsViewController: UIViewController {
         self.orangeShadowImg.hidden = false
         self.fruitShadowImg.hidden = false
         self.berryShadowImg.hidden = false
+        self.isAvocadoMatch = false
+        self.isOrangeMatch = false
+        self.isFruitMatch = false
+        self.isBerryMatch = false
     }
 }

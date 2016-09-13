@@ -225,24 +225,28 @@ class AnimalsViewController: UIViewController {
             self.chicken.center = self.chickenShadow.center
             self.chickenShadow.hidden = true
             self.isChickenMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(cuala.frame, cualaShadow.frame) {
             self.cuala.center = self.cualaShadow.center
             self.cualaShadow.hidden = true
             self.isCualaMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(crocodile.frame, crocodileShadow.frame) {
             self.crocodile.center = self.crocodileShadow.center
             self.crocodileShadow.hidden = true
             self.isCrocodileMatch = true
+            self.matchValidation()
         }
         
         if CGRectIntersectsRect(raccoon.frame, raccoonShadow.frame) {
             self.raccoon.center = self.raccoonShadow.center
             self.raccoonShadow.hidden = true
             self.isRaccoonMatch = true
+            self.matchValidation()
         }
         
         
@@ -260,16 +264,22 @@ class AnimalsViewController: UIViewController {
         }
         
         if CGRectIntersectsRect(raccoon.frame, cualaShadow.frame) || CGRectIntersectsRect(raccoon.frame, crocodileShadow.frame) || CGRectIntersectsRect(raccoon.frame, chickenShadow.frame) {
-            
             self.raccoon.frame.origin.x = self.raccoonPositionX
             self.raccoon.frame.origin.y = self.raccoonPositionY
         }
         
         if CGRectIntersectsRect(chicken.frame, cualaShadow.frame) || CGRectIntersectsRect(chicken.frame, crocodileShadow.frame) || CGRectIntersectsRect(chicken.frame, raccoonShadow.frame) {
-            
             self.chicken.frame.origin.x = self.chickenPositionX
             self.chicken.frame.origin.y = self.chickenPositionY
         }
+    }
+    
+    func matchValidation() {
+        // checking are all animals matching with their shadows
+        if self.isCualaMatch && self.isChickenMatch && self.isCrocodileMatch && self.isRaccoonMatch {
+            print("MATCH")
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -278,7 +288,6 @@ class AnimalsViewController: UIViewController {
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
         self.performSegueWithIdentifier("pushBackVC", sender: self)
-
     }
     
     @IBAction func refreshButtonTapped(sender: AnyObject) {
@@ -287,6 +296,10 @@ class AnimalsViewController: UIViewController {
         self.chickenShadow.hidden = false
         self.crocodileShadow.hidden = false
         self.raccoonShadow.hidden = false
+        self.isCualaMatch = false
+        self.isChickenMatch = false
+        self.isCrocodileMatch = false
+        self.isRaccoonMatch = false
     }
 }
 
