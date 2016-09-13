@@ -129,14 +129,15 @@ class AnimalsViewController: UIViewController {
     
     func setValuesOfDefaultPositions() {
         // track respond position of an image
+        // called after all constraints are set
         self.cualaPositionX = self.cuala.frame.origin.x
         self.cualaPositionY = self.cuala.frame.origin.y
         self.chickenPositionX = self.chicken.frame.origin.x
         self.chickenPositionY = self.chicken.frame.origin.y
-        self.crocodilePositionX = crocodile.frame.origin.x
-        self.crocodilePositionY = crocodile.frame.origin.y
-        self.raccoonPositionX = raccoon.frame.origin.x
-        self.raccoonPositionY = raccoon.frame.origin.y
+        self.crocodilePositionX = self.crocodile.frame.origin.x
+        self.crocodilePositionY = self.crocodile.frame.origin.y
+        self.raccoonPositionX = self.raccoon.frame.origin.x
+        self.raccoonPositionY = self.raccoon.frame.origin.y
         
     }
 
@@ -216,6 +217,10 @@ class AnimalsViewController: UIViewController {
     
     func checkCollisions() {
         
+        // checking collistions between animals images and shadows
+        // called after touches ended
+        
+        // if animal image matchs with it's shadow
         if CGRectIntersectsRect(chicken.frame, chickenShadow.frame) {
             self.chicken.center = self.chickenShadow.center
             self.chickenShadow.hidden = true
@@ -241,7 +246,7 @@ class AnimalsViewController: UIViewController {
         }
         
         
-        
+        // if animal image does not match with shadow, push image back to it's respond place
         if CGRectIntersectsRect(cuala.frame, crocodileShadow.frame) || CGRectIntersectsRect(cuala.frame, raccoonShadow.frame) || CGRectIntersectsRect(cuala.frame, chickenShadow.frame) {
             
             self.cuala.frame.origin.x = self.cualaPositionX
