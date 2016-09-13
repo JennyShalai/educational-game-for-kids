@@ -19,23 +19,39 @@ class ChoiceViewController: UIViewController {
     
     let kCornerRadius: CGFloat = 30
     
-    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print("viewDidLoad \(self.view.frame)")
+
         self.setConstraints()
         self.setZPositions()
         self.setGestures()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear \(self.view.frame)")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("viewDidAppear \(self.view.frame)")
     }
     
     func setConstraints() {
-        
+        print("setConstraints:before \(self.view.frame)")
+
         self.view.removeConstraints(self.view.constraints)
         self.view.translatesAutoresizingMaskIntoConstraints = false
         
+        let frame = self.view.frame;
+        // let margins = self.view.layoutMargins
+        let marginsGuide = self.view.layoutMarginsGuide
+        self.view.leftAnchor.constraintEqualToAnchor(marginsGuide.leftAnchor)
+        self.view.topAnchor.constraintEqualToAnchor(marginsGuide.topAnchor)
+        self.view.widthAnchor.constraintEqualToConstant(frame.width).active = true
+        self.view.heightAnchor.constraintEqualToConstant(frame.height).active = true
         
-        // leftView yellow side 
+        // leftView yellow side
         self.leftView.removeConstraints(self.leftView.constraints)
         self.leftView.translatesAutoresizingMaskIntoConstraints = false
         self.leftView.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
@@ -64,7 +80,8 @@ class ChoiceViewController: UIViewController {
         self.textView.translatesAutoresizingMaskIntoConstraints = false
         self.textView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
         self.textView.topAnchor.constraintEqualToAnchor(self.logoImg.bottomAnchor, constant: 10).active = true
-        self.textView.heightAnchor.constraintEqualToConstant(360).active = true
+        self.textView.bottomAnchor.constraintEqualToAnchor(self.animalsImg.topAnchor).active = true
+        //self.textView.heightAnchor.constraintEqualToConstant(360).active = true
         self.textView.widthAnchor.constraintEqualToConstant(300).active = true
         
         // animals image
@@ -76,13 +93,16 @@ class ChoiceViewController: UIViewController {
         self.animalsImg.widthAnchor.constraintEqualToConstant(140).active = true
         
         // fruits image
-        self.fruitsImg.removeConstraints(self.animalsImg.constraints)
+        self.fruitsImg.removeConstraints(self.fruitsImg.constraints)
         self.fruitsImg.translatesAutoresizingMaskIntoConstraints = false
         self.fruitsImg.centerXAnchor.constraintEqualToAnchor(self.rightView.centerXAnchor).active = true
         self.fruitsImg.centerYAnchor.constraintEqualToAnchor(self.rightView.centerYAnchor, constant: 100).active = true
         self.fruitsImg.heightAnchor.constraintEqualToConstant(140).active = true
         self.fruitsImg.widthAnchor.constraintEqualToConstant(140).active = true
-    
+        
+        self.view.layoutIfNeeded()
+
+        print("setConstraints:after \(self.view.frame)")
     }
     
     func setZPositions() {
@@ -108,16 +128,17 @@ class ChoiceViewController: UIViewController {
         let tapFruitsGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.fruitsImageTapped(_:)))
         numbersImageView.userInteractionEnabled = true
         numbersImageView.addGestureRecognizer(tapFruitsGestureRecognizer)
-        
     }
     
     func animalsImageTapped(img: AnyObject) {
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("AnimalsViewController") 
-        self.presentViewController(nextViewController, animated:true, completion:nil)
+//        let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AnimalsViewController")
+//        self.presentViewController(nextViewController, animated:true, completion:nil)
+//        
+         self.performSegueWithIdentifier("pushNextVC", sender: self)
     }
-    
+
     func fruitsImageTapped(img: AnyObject) {
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("FruitsViewController")
+        let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("FruitsViewController")
         self.presentViewController(nextViewController, animated:true, completion:nil)
     }
     

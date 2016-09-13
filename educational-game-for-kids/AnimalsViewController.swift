@@ -183,8 +183,11 @@ class AnimalsViewController: UIViewController {
     }
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ChoiceViewController")
-        self.presentViewController(nextViewController, animated:true, completion:nil)
+        //let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ChoiceViewController")
+        //self.presentViewController(nextViewController, animated:true, completion:nil)
+//        dismissViewControllerAnimated(false, completion: nil)
+        self.performSegueWithIdentifier("pushBackVC", sender: self)
+
     }
     
 }
