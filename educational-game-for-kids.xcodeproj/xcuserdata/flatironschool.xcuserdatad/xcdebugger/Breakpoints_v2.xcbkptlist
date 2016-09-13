@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "educational-game-for-kids/ChoiceViewController.swift"
-            timestampString = "495429611.010049"
+            timestampString = "495476592.276284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "setConstraints()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "educational-game-for-kids/ChoiceViewController.swift"
-            timestampString = "495429611.010049"
+            timestampString = "495476592.276284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "setConstraints()"
             landmarkType = "5">
          </BreakpointContent>

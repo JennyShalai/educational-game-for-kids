@@ -12,11 +12,12 @@ class AnimalsViewController: UIViewController {
 
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
+    @IBOutlet weak var menuBar: UINavigationBar!
+    
     @IBOutlet weak var chicken: UIImageView!
     @IBOutlet weak var crocodile: UIImageView!
     @IBOutlet weak var cuala: UIImageView!
     @IBOutlet weak var raccoon: UIImageView!
-    
     @IBOutlet weak var chickenShadow: UIImageView!
     @IBOutlet weak var raccoonShadow: UIImageView!
     @IBOutlet weak var cualaShadow: UIImageView!
@@ -26,7 +27,6 @@ class AnimalsViewController: UIViewController {
     var isCrocodileMoving: Bool = false
     var isCualaMoving: Bool = false
     var isRaccoonMoving: Bool = false
-    
     var isChickenMatch: Bool = false
     var isCrocodileMatch: Bool = false
     var isCualaMatch: Bool = false
@@ -34,14 +34,110 @@ class AnimalsViewController: UIViewController {
     
     let maxIndexZ: CGFloat = 5
     
+    var cualaPositionX: CGFloat = 0
+    var cualaPositionY: CGFloat = 0
+    var chickenPositionX: CGFloat = 0
+    var chickenPositionY: CGFloat = 0
+    var crocodilePositionX: CGFloat = 0
+    var crocodilePositionY: CGFloat = 0
+    var raccoonPositionX: CGFloat = 0
+    var raccoonPositionY: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(self.view.frame.height) \(self.view.frame.width)")
+        self.setConstraints()
+    }
+    
+    func setConstraints() {
         
-        print("chicken \(self.chicken.frame.origin.x) \(self.chicken.frame.origin.y)")
-        print("crocodile \(self.crocodile.frame.origin.x) \(self.crocodile.frame.origin.y)")
-        print("cuala \(self.cuala.frame.origin.x) \(self.cuala.frame.origin.y)")
-        print("raccoon \(self.raccoon.frame.origin.x) \(self.raccoon.frame.origin.y)")
+        let heightOfGameArea = self.view.frame.height - 64
+        
+        // menu bar up top
+        self.menuBar.removeConstraints(self.menuBar.constraints)
+        self.menuBar.translatesAutoresizingMaskIntoConstraints = false
+        self.menuBar.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20).active = true
+        self.menuBar.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
+        self.menuBar.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
+        self.menuBar.heightAnchor.constraintEqualToConstant(44).active = true
+        
+        // kuala
+        self.cuala.removeConstraints(self.cuala.constraints)
+        self.cuala.translatesAutoresizingMaskIntoConstraints = false
+        self.cuala.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
+        self.cuala.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.cuala.heightAnchor.constraintEqualToConstant(70).active = true
+        self.cuala.widthAnchor.constraintEqualToConstant(110).active = true
+       
+        // chicken
+        self.chicken.removeConstraints(self.chicken.constraints)
+        self.chicken.translatesAutoresizingMaskIntoConstraints = false
+        self.chicken.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
+        self.chicken.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.chicken.heightAnchor.constraintEqualToConstant(71).active = true
+        self.chicken.widthAnchor.constraintEqualToConstant(71).active = true
+        
+        // crocodile
+        self.crocodile.removeConstraints(self.crocodile.constraints)
+        self.crocodile.translatesAutoresizingMaskIntoConstraints = false
+        self.crocodile.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
+        self.crocodile.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.crocodile.heightAnchor.constraintEqualToConstant(77).active = true
+        self.crocodile.widthAnchor.constraintEqualToConstant(76).active = true
+        
+        // raccoon
+        self.raccoon.removeConstraints(self.raccoon.constraints)
+        self.raccoon.translatesAutoresizingMaskIntoConstraints = false
+        self.raccoon.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
+        self.raccoon.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.raccoon.heightAnchor.constraintEqualToConstant(70).active = true
+        self.raccoon.widthAnchor.constraintEqualToConstant(75).active = true
+        
+        // kuala shadow
+        self.cualaShadow.removeConstraints(self.cualaShadow.constraints)
+        self.cualaShadow.translatesAutoresizingMaskIntoConstraints = false
+        self.cualaShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
+        self.cualaShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.cualaShadow.heightAnchor.constraintEqualToConstant(70).active = true
+        self.cualaShadow.widthAnchor.constraintEqualToConstant(110).active = true
+        
+        //chicken shadow
+        self.chickenShadow.removeConstraints(self.chickenShadow.constraints)
+        self.chickenShadow.translatesAutoresizingMaskIntoConstraints = false
+        self.chickenShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
+        self.chickenShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.chickenShadow.heightAnchor.constraintEqualToConstant(71).active = true
+        self.chickenShadow.widthAnchor.constraintEqualToConstant(71).active = true
+        
+        // crocodile shadow
+        self.crocodileShadow.removeConstraints(self.crocodileShadow.constraints)
+        self.crocodileShadow.translatesAutoresizingMaskIntoConstraints = false
+        self.crocodileShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
+        self.crocodileShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.crocodileShadow.heightAnchor.constraintEqualToConstant(77).active = true
+        self.crocodileShadow.widthAnchor.constraintEqualToConstant(76).active = true
+        
+        // raccoon shadow
+        self.raccoonShadow.removeConstraints(self.raccoonShadow.constraints)
+        self.raccoonShadow.translatesAutoresizingMaskIntoConstraints = false
+        self.raccoonShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
+        self.raccoonShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.raccoonShadow.heightAnchor.constraintEqualToConstant(70).active = true
+        self.raccoonShadow.widthAnchor.constraintEqualToConstant(75).active = true
+        
+        self.setValuesOfDefaultPositions()
+    }
+    
+    func setValuesOfDefaultPositions() {
+        // track respond position of an image
+        self.cualaPositionX = self.cuala.frame.origin.x
+        self.cualaPositionY = self.cuala.frame.origin.y
+        self.chickenPositionX = self.chicken.frame.origin.x
+        self.chickenPositionY = self.chicken.frame.origin.y
+        self.crocodilePositionX = crocodile.frame.origin.x
+        self.crocodilePositionY = crocodile.frame.origin.y
+        self.raccoonPositionX = raccoon.frame.origin.x
+        self.raccoonPositionY = raccoon.frame.origin.y
+        
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -121,30 +217,24 @@ class AnimalsViewController: UIViewController {
     func checkCollisions() {
         
         if CGRectIntersectsRect(chicken.frame, chickenShadow.frame) {
-            
             self.chicken.center = self.chickenShadow.center
             self.chickenShadow.hidden = true
             self.isChickenMatch = true
-            
         }
         
         if CGRectIntersectsRect(cuala.frame, cualaShadow.frame) {
-            
             self.cuala.center = self.cualaShadow.center
             self.cualaShadow.hidden = true
             self.isCualaMatch = true
-            
         }
         
         if CGRectIntersectsRect(crocodile.frame, crocodileShadow.frame) {
-            
             self.crocodile.center = self.crocodileShadow.center
             self.crocodileShadow.hidden = true
             self.isCrocodileMatch = true
         }
         
         if CGRectIntersectsRect(raccoon.frame, raccoonShadow.frame) {
-            
             self.raccoon.center = self.raccoonShadow.center
             self.raccoonShadow.hidden = true
             self.isRaccoonMatch = true
@@ -154,38 +244,34 @@ class AnimalsViewController: UIViewController {
         
         if CGRectIntersectsRect(cuala.frame, crocodileShadow.frame) || CGRectIntersectsRect(cuala.frame, raccoonShadow.frame) || CGRectIntersectsRect(cuala.frame, chickenShadow.frame) {
             
-            self.cuala.frame.origin.x = 20
-            self.cuala.frame.origin.y = 47
+            self.cuala.frame.origin.x = self.cualaPositionX
+            self.cuala.frame.origin.y = self.cualaPositionY
         }
         
         if CGRectIntersectsRect(crocodile.frame, cualaShadow.frame) || CGRectIntersectsRect(crocodile.frame, raccoonShadow.frame) || CGRectIntersectsRect(crocodile.frame, chickenShadow.frame) {
             
-            self.crocodile.frame.origin.x = 31
-            self.crocodile.frame.origin.y = 295
+            self.crocodile.frame.origin.x = self.crocodilePositionX
+            self.crocodile.frame.origin.y = self.crocodilePositionY
         }
         
         if CGRectIntersectsRect(raccoon.frame, cualaShadow.frame) || CGRectIntersectsRect(raccoon.frame, crocodileShadow.frame) || CGRectIntersectsRect(raccoon.frame, chickenShadow.frame) {
             
-            self.raccoon.frame.origin.x = 32
-            self.raccoon.frame.origin.y = 433
+            self.raccoon.frame.origin.x = self.raccoonPositionX
+            self.raccoon.frame.origin.y = self.raccoonPositionY
         }
         
         if CGRectIntersectsRect(chicken.frame, cualaShadow.frame) || CGRectIntersectsRect(chicken.frame, crocodileShadow.frame) || CGRectIntersectsRect(chicken.frame, raccoonShadow.frame) {
             
-            self.chicken.frame.origin.x = 34
-            self.chicken.frame.origin.y = 169
+            self.chicken.frame.origin.x = self.chickenPositionX
+            self.chicken.frame.origin.y = self.chickenPositionY
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
-        //let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ChoiceViewController")
-        //self.presentViewController(nextViewController, animated:true, completion:nil)
-//        dismissViewControllerAnimated(false, completion: nil)
         self.performSegueWithIdentifier("pushBackVC", sender: self)
 
     }

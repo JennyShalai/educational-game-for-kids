@@ -144,13 +144,14 @@
                         <outlet property="crocodileShadow" destination="fcT-Lp-uhs" id="hjt-nm-DKA"/>
                         <outlet property="cuala" destination="765-x0-ETZ" id="3n6-SI-ph8"/>
                         <outlet property="cualaShadow" destination="ymi-my-Mwq" id="y3G-U3-d7u"/>
+                        <outlet property="menuBar" destination="5lA-CC-LVp" id="dUJ-fI-ey9"/>
                         <outlet property="raccoon" destination="gh4-Lw-mtm" id="KEX-iS-96q"/>
                         <outlet property="raccoonShadow" destination="Yfv-BD-hFh" id="hjy-ul-vIy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.26666666666665" y="378.19333333333327"/>
+            <point key="canvasLocation" x="169.5" y="36.5"/>
         </scene>
         <!--Fruits View Controller-->
         <scene sceneID="mSp-fp-bkF">
@@ -230,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cf-wF-vDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404.5333333333333" y="378.19333333333327"/>
+            <point key="canvasLocation" x="148.5" y="804.5"/>
         </scene>
     </scenes>
     <resources>

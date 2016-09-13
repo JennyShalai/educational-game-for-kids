@@ -17,8 +17,6 @@ class ChoiceViewController: UIViewController {
     @IBOutlet weak var fruitsImg: UIImageView!
     @IBOutlet weak var logoImg: UIImageView!
     
-    let kCornerRadius: CGFloat = 30
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -106,7 +104,6 @@ class ChoiceViewController: UIViewController {
     }
     
     func setZPositions() {
-        //self.textView.layer.cornerRadius = kCornerRadius
         self.textView.textAlignment = .Center
         self.logoImg.layer.zPosition = 2
         self.leftView.layer.zPosition = 1
@@ -131,9 +128,7 @@ class ChoiceViewController: UIViewController {
     }
     
     func animalsImageTapped(img: AnyObject) {
-//        let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AnimalsViewController")
-//        self.presentViewController(nextViewController, animated:true, completion:nil)
-//        
+        
          self.performSegueWithIdentifier("pushNextVC", sender: self)
     }
 
