@@ -281,5 +281,12 @@ class AnimalsViewController: UIViewController {
 
     }
     
+    @IBAction func refreshButtonTapped(sender: AnyObject) {
+        self.setConstraints()
+        self.cualaShadow.hidden = false
+        self.chickenShadow.hidden = false
+        self.crocodileShadow.hidden = false
+        self.raccoonShadow.hidden = false
+    }
 }
 

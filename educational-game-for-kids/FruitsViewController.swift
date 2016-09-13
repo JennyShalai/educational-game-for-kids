@@ -19,7 +19,6 @@ class FruitsViewController: UIViewController {
     @IBOutlet weak var fruitImg: UIImageView!
     @IBOutlet weak var berryImg: UIImageView!
     
-    
     @IBOutlet weak var orangeShadowImg: UIImageView!
     @IBOutlet weak var berryShadowImg: UIImageView!
     @IBOutlet weak var fruitShadowImg: UIImageView!
@@ -49,11 +48,6 @@ class FruitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
-        print("\(self.view.frame.height) \(self.view.frame.width)")
-        print("avocado \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
-        print("orange \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
-        print("fruit \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
-        print("berry \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
     }
     
     func setConstraints() {
@@ -146,6 +140,10 @@ class FruitsViewController: UIViewController {
         self.fruitPositionY = self.fruitImg.frame.origin.y
         self.berryPositionX = self.berryImg.frame.origin.x
         self.berryPositionY = self.berryImg.frame.origin.y
+        print("AVOCADO \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
+        print("ORANGE \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
+        print("FRUIT \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
+        print("BERRY \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
         
     }
     
@@ -254,27 +252,27 @@ class FruitsViewController: UIViewController {
         }
         
         if CGRectIntersectsRect(avocadoImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(avocadoImg.frame, fruitShadowImg.frame) || CGRectIntersectsRect(avocadoImg.frame, berryShadowImg.frame) {
-            
             self.avocadoImg.frame.origin.x = self.avocadoPositionX
             self.avocadoImg.frame.origin.y = self.avocadoPositionY
+            print("avocado \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
         }
         
         if CGRectIntersectsRect(orangeImg.frame, avocadoShadowImg.frame) || CGRectIntersectsRect(orangeImg.frame, fruitShadowImg.frame) || CGRectIntersectsRect(orangeImg.frame, berryShadowImg.frame) {
-            
             self.orangeImg.frame.origin.x = self.orangePositionX
             self.orangeImg.frame.origin.y = self.orangePositionY
+            print("orange \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
         }
         
         if CGRectIntersectsRect(fruitImg.frame, avocadoShadowImg.frame) || CGRectIntersectsRect(fruitImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(fruitImg.frame, berryShadowImg.frame) {
-            
             self.fruitImg.frame.origin.x = self.fruitPositionX
             self.fruitImg.frame.origin.y = self.fruitPositionY
+            print("fruit \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
         }
         
         if CGRectIntersectsRect(berryImg.frame, avocadoShadowImg.frame) || CGRectIntersectsRect(berryImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(berryImg.frame, fruitShadowImg.frame) {
-            
             self.berryImg.frame.origin.x = self.berryPositionX
             self.berryImg.frame.origin.y = self.berryPositionY
+            print("berry \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
         }
     }
     
@@ -288,4 +286,11 @@ class FruitsViewController: UIViewController {
         self.presentViewController(nextViewController, animated:true, completion:nil)
     }
     
+    @IBAction func refreshButtonTapped(sender: AnyObject) {
+        self.setConstraints()
+        self.avocadoShadowImg.hidden = false
+        self.orangeShadowImg.hidden = false
+        self.fruitShadowImg.hidden = false
+        self.berryShadowImg.hidden = false
+    }
 }

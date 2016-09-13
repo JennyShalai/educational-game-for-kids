@@ -93,7 +93,11 @@
                                                 <segue destination="Cfq-IG-Loh" kind="modal" identifier="pushBackVC" id="wgd-5M-jjL"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="bxS-pT-fM0"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="bxS-pT-fM0">
+                                            <connections>
+                                                <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="ESk-lE-oFq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -191,7 +195,11 @@
                                                         <action selector="doneButtonTapped:" destination="nK1-aU-9mR" id="fFa-hE-39h"/>
                                                     </connections>
                                                 </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4VQ-f1-MhV"/>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4VQ-f1-MhV">
+                                                    <connections>
+                                                        <action selector="refreshButtonTapped:" destination="nK1-aU-9mR" id="sI0-aH-d4N"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>

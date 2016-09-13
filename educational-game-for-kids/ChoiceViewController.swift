@@ -19,9 +19,6 @@ class ChoiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("viewDidLoad \(self.view.frame)")
-
         self.setConstraints()
         self.setZPositions()
         self.setGestures()
@@ -36,8 +33,6 @@ class ChoiceViewController: UIViewController {
     }
     
     func setConstraints() {
-        print("setConstraints:before \(self.view.frame)")
-
         self.view.removeConstraints(self.view.constraints)
         self.view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -99,8 +94,6 @@ class ChoiceViewController: UIViewController {
         self.fruitsImg.widthAnchor.constraintEqualToConstant(140).active = true
         
         self.view.layoutIfNeeded()
-
-        print("setConstraints:after \(self.view.frame)")
     }
     
     func setZPositions() {
@@ -128,7 +121,6 @@ class ChoiceViewController: UIViewController {
     }
     
     func animalsImageTapped(img: AnyObject) {
-        
          self.performSegueWithIdentifier("pushNextVC", sender: self)
     }
 
@@ -139,7 +131,6 @@ class ChoiceViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
