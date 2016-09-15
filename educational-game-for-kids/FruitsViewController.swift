@@ -14,6 +14,7 @@ class FruitsViewController: UIViewController {
     
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var menuBar: UINavigationBar!
+    @IBOutlet weak var greatJobImg: UIImageView!
     
     @IBOutlet weak var avocadoImg: UIImageView!
     @IBOutlet weak var orangeImg: UIImageView!
@@ -52,8 +53,11 @@ class FruitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
+        self.setDefaultPositions()
+        self.setInitialTriggers()
+        
         self.backgroundColor = self.wrapperView.backgroundColor!
-        print("red \(self.backgroundColor)")
+        
     }
     
     func setConstraints() {
@@ -132,10 +136,16 @@ class FruitsViewController: UIViewController {
         self.berryShadowImg.heightAnchor.constraintEqualToConstant(90).active = true
         self.berryShadowImg.widthAnchor.constraintEqualToConstant(71).active = true
         
-        self.setValuesOfDefaultPositions()
+        //  great Job Star
+        self.greatJobImg.removeConstraints(greatJobImg.constraints)
+        self.greatJobImg.translatesAutoresizingMaskIntoConstraints = false
+        self.greatJobImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.centerXAnchor).active = true
+        self.greatJobImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.centerYAnchor).active = true
+        self.greatJobImg.heightAnchor.constraintEqualToConstant(200).active = true
+        self.greatJobImg.widthAnchor.constraintEqualToConstant(200).active = true
     }
     
-    func setValuesOfDefaultPositions() {
+    func setDefaultPositions() {
         // track respond position of an image
         // called after all constraints are set
         self.avocadoPositionX = self.avocadoImg.frame.origin.x
@@ -150,7 +160,33 @@ class FruitsViewController: UIViewController {
         print("ORANGE \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
         print("FRUIT \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
         print("BERRY \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
+    }
+    
+    func setInitialTriggers() {
         
+        // showing images and hidding "Great Job" star
+        self.greatJobImg.hidden = true
+        self.avocadoShadowImg.hidden = false
+        self.orangeShadowImg.hidden = false
+        self.fruitShadowImg.hidden = false
+        self.berryShadowImg.hidden = false
+        self.avocadoImg.hidden = false
+        self.orangeImg.hidden = false
+        self.fruitImg.hidden = false
+        self.berryImg.hidden = false
+        
+        self.isAvocadoMoving = false
+        self.isOrangeMoving = false
+        self.isFruitMoving = false
+        self.isBerryMoving = false
+        
+        // reset matching triggers
+        self.isAvocadoMatch = false
+        self.isOrangeMatch = false
+        self.isFruitMatch = false
+        self.isBerryMatch = false
+        
+        self.isAnimationGoing = false
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -216,11 +252,14 @@ class FruitsViewController: UIViewController {
         
         self.checkCollisions()
         
+        // reset move activity triggers
         self.isAvocadoMoving = false
         self.isOrangeMoving = false
         self.isFruitMoving = false
         self.isBerryMoving = false
         
+        //set Z-index for image position
+        self.greatJobImg.layer.zPosition = 7
         self.avocadoImg.layer.zPosition = 4
         self.orangeImg.layer.zPosition = 3
         self.fruitImg.layer.zPosition = 2
@@ -229,8 +268,12 @@ class FruitsViewController: UIViewController {
     
     func checkCollisions() {
         
+        // checking collistions between fruits images and shadows
+        // called after touches ended
+        
+        // if fruits image matchs with it's shadow
+        
         if CGRectIntersectsRect(avocadoImg.frame, avocadoShadowImg.frame) {
-            
             self.avocadoImg.center = self.avocadoShadowImg.center
             self.avocadoShadowImg.hidden = true
             self.isAvocadoMatch = true
@@ -238,7 +281,6 @@ class FruitsViewController: UIViewController {
         }
         
         if CGRectIntersectsRect(orangeImg.frame, orangeShadowImg.frame) {
-            
             self.orangeImg.center = self.orangeShadowImg.center
             self.orangeShadowImg.hidden = true
             self.isOrangeMatch = true
@@ -246,7 +288,6 @@ class FruitsViewController: UIViewController {
         }
         
         if CGRectIntersectsRect(fruitImg.frame, fruitShadowImg.frame) {
-            
             self.fruitImg.center = self.fruitShadowImg.center
             self.fruitShadowImg.hidden = true
             self.isFruitMatch = true
@@ -254,7 +295,6 @@ class FruitsViewController: UIViewController {
         }
         
         if CGRectIntersectsRect(berryImg.frame, berryShadowImg.frame) {
-            
             self.berryImg.center = self.berryShadowImg.center
             self.berryShadowImg.hidden = true
             self.isBerryMatch = true
@@ -289,41 +329,46 @@ class FruitsViewController: UIViewController {
     func matchValidation() {
         // checking are all fruits matching with their shadows
         if !isAnimationGoing {
+            
             if self.isAvocadoMatch && self.isOrangeMatch && self.isFruitMatch && self.isBerryMatch {
-                print("FRUITS MATCHED")
+                // animating screen background when all images match shadows
                 self.isAnimationGoing = true
                 
-                UIView.animateWithDuration(0.2, animations: { () -> Void in
-                    print("1")
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
                     self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.839216, blue: 0, alpha: 1)
-                }) { (Bool) -> Void in
-                    print("2")
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                }) { (true) -> Void in
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
                         self.wrapperView.backgroundColor = self.backgroundColor
-                        }, completion: { (Bool) -> Void in
-                            print("3")
-                            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                        }, completion: { (true) -> Void in
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
                                 self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.839216, blue: 0, alpha: 1)
-
-                                }, completion: { (Bool) -> Void in
-                                    print("4")
-                                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                                }, completion: { (true) -> Void in
+                                    UIView.animateWithDuration(0.3, animations: { () -> Void in
                                         self.wrapperView.backgroundColor = self.backgroundColor
                                         }, completion:nil)
+                                    self.isAnimationGoing = false
                             })
                     })
-                    self.isAnimationGoing = false
-                    
-                    
                 }
+                
+                // hide all images
+                self.avocadoShadowImg.hidden = true
+                self.orangeShadowImg.hidden = true
+                self.fruitShadowImg.hidden = true
+                self.berryShadowImg.hidden = true
+                self.avocadoImg.hidden = true
+                self.orangeImg.hidden = true
+                self.fruitImg.hidden = true
+                self.berryImg.hidden = true
+                
+                // show the star
+                self.greatJobImg.hidden = false
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
@@ -333,13 +378,6 @@ class FruitsViewController: UIViewController {
     
     @IBAction func refreshButtonTapped(sender: AnyObject) {
         self.setConstraints()
-        self.avocadoShadowImg.hidden = false
-        self.orangeShadowImg.hidden = false
-        self.fruitShadowImg.hidden = false
-        self.berryShadowImg.hidden = false
-        self.isAvocadoMatch = false
-        self.isOrangeMatch = false
-        self.isFruitMatch = false
-        self.isBerryMatch = false
+        self.setInitialTriggers()
     }
 }

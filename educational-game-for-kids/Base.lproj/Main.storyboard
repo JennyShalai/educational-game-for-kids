@@ -134,6 +134,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gj.png" id="BK7-xS-1fe">
+                                <rect key="frame" x="162" y="311" width="50" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -145,6 +149,7 @@
                         <outlet property="crocodileShadow" destination="fcT-Lp-uhs" id="hjt-nm-DKA"/>
                         <outlet property="cuala" destination="765-x0-ETZ" id="3n6-SI-ph8"/>
                         <outlet property="cualaShadow" destination="ymi-my-Mwq" id="y3G-U3-d7u"/>
+                        <outlet property="greatJobImg" destination="BK7-xS-1fe" id="Fzt-P2-p2w"/>
                         <outlet property="menuBar" destination="5lA-CC-LVp" id="dUJ-fI-ey9"/>
                         <outlet property="raccoon" destination="gh4-Lw-mtm" id="KEX-iS-96q"/>
                         <outlet property="raccoonShadow" destination="Yfv-BD-hFh" id="hjy-ul-vIy"/>
@@ -217,6 +222,10 @@
                                         <rect key="frame" x="254" y="482" width="81" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gj.png" id="pBn-R3-KJR">
+                                        <rect key="frame" x="163" y="309" width="49" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -231,6 +240,7 @@
                         <outlet property="berryShadowImg" destination="N8K-MD-st0" id="jTl-J0-LzW"/>
                         <outlet property="fruitImg" destination="Cwk-57-ODB" id="kvg-Ma-sPg"/>
                         <outlet property="fruitShadowImg" destination="cC2-v3-06A" id="xhC-6Y-shB"/>
+                        <outlet property="greatJobImg" destination="pBn-R3-KJR" id="jbp-9t-rJd"/>
                         <outlet property="menuBar" destination="gVq-30-e29" id="v8e-vh-3a3"/>
                         <outlet property="orangeImg" destination="J5t-CH-b2W" id="rGW-Fy-Gib"/>
                         <outlet property="orangeShadowImg" destination="9rM-bO-M6J" id="LGh-sm-RYF"/>
@@ -253,6 +263,7 @@
         <image name="crocodileShadow.png" width="329" height="390"/>
         <image name="fruit.png" width="355" height="330"/>
         <image name="fruitShadow.png" width="355" height="330"/>
+        <image name="gj.png" width="900" height="860"/>
         <image name="kuala.png" width="478" height="269"/>
         <image name="kualaShadow.png" width="478" height="269"/>
         <image name="logo.png" width="600" height="120"/>

@@ -22,11 +22,6 @@ class ChoiceViewController: UIViewController {
         self.setConstraints()
         self.setZPositions()
         self.setGestures()
-        
-        
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {

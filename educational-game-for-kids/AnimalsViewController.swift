@@ -14,27 +14,32 @@ class AnimalsViewController: UIViewController {
     
     @IBOutlet weak var menuBar: UINavigationBar!
     @IBOutlet var wrapperView: UIView!
+    @IBOutlet weak var greatJobImg: UIImageView!
     
     @IBOutlet weak var chicken: UIImageView!
     @IBOutlet weak var crocodile: UIImageView!
     @IBOutlet weak var cuala: UIImageView!
     @IBOutlet weak var raccoon: UIImageView!
+    
     @IBOutlet weak var chickenShadow: UIImageView!
     @IBOutlet weak var raccoonShadow: UIImageView!
     @IBOutlet weak var cualaShadow: UIImageView!
     @IBOutlet weak var crocodileShadow: UIImageView!
     
     var isChickenMoving: Bool = false
-    var isCrocodileMoving: Bool = false
     var isCualaMoving: Bool = false
     var isRaccoonMoving: Bool = false
+    var isCrocodileMoving: Bool = false
+    
     var isChickenMatch: Bool = false
     var isCrocodileMatch: Bool = false
     var isCualaMatch: Bool = false
     var isRaccoonMatch: Bool = false
+    
     var isAnimationGoing: Bool = false
     
     let maxIndexZ: CGFloat = 5
+    var backgroundColor: UIColor = UIColor.whiteColor()
     
     var cualaPositionX: CGFloat = 0
     var cualaPositionY: CGFloat = 0
@@ -45,13 +50,14 @@ class AnimalsViewController: UIViewController {
     var raccoonPositionX: CGFloat = 0
     var raccoonPositionY: CGFloat = 0
     
-    var backgroundColor: UIColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
+        self.setDefaultPositions()
+        self.setInitialTriggers()
+        
         self.backgroundColor = self.wrapperView.backgroundColor!
-        print("yellow \(self.backgroundColor)")
+        
     }
     
     func setConstraints() {
@@ -130,10 +136,16 @@ class AnimalsViewController: UIViewController {
         self.raccoonShadow.heightAnchor.constraintEqualToConstant(70).active = true
         self.raccoonShadow.widthAnchor.constraintEqualToConstant(75).active = true
         
-        self.setValuesOfDefaultPositions()
+        //  great Job Star
+        self.greatJobImg.removeConstraints(greatJobImg.constraints)
+        self.greatJobImg.translatesAutoresizingMaskIntoConstraints = false
+        self.greatJobImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.centerXAnchor).active = true
+        self.greatJobImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.centerYAnchor).active = true
+        self.greatJobImg.heightAnchor.constraintEqualToConstant(200).active = true
+        self.greatJobImg.widthAnchor.constraintEqualToConstant(200).active = true
     }
     
-    func setValuesOfDefaultPositions() {
+    func setDefaultPositions() {
         // track respond position of an image
         // called after all constraints are set
         self.cualaPositionX = self.cuala.frame.origin.x
@@ -145,6 +157,33 @@ class AnimalsViewController: UIViewController {
         self.raccoonPositionX = self.raccoon.frame.origin.x
         self.raccoonPositionY = self.raccoon.frame.origin.y
         
+    }
+    
+    func setInitialTriggers() {
+        
+        // showing images and hidding "Great Job" star
+        self.greatJobImg.hidden = true
+        self.cualaShadow.hidden = false
+        self.crocodileShadow.hidden = false
+        self.raccoonShadow.hidden = false
+        self.chickenShadow.hidden = false
+        self.cuala.hidden = false
+        self.crocodile.hidden = false
+        self.chicken.hidden = false
+        self.raccoon.hidden = false
+        
+        self.isCualaMoving = false
+        self.isChickenMoving = false
+        self.isCrocodileMoving = false
+        self.isRaccoonMoving = false
+        
+        // reset matching triggers
+        self.isCualaMatch = false
+        self.isCrocodileMatch = false
+        self.isRaccoonMatch = false
+        self.isChickenMatch = false
+        
+        self.isAnimationGoing = false
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -283,38 +322,44 @@ class AnimalsViewController: UIViewController {
     func matchValidation() {
         // checking are all animals matching with their shadows
         if !isAnimationGoing {
+            
             if self.isCualaMatch && self.isChickenMatch && self.isCrocodileMatch && self.isRaccoonMatch {
-                print("MATCH")
+                // animating screen background when all images match shadows
                 self.isAnimationGoing = true
                 
                 UIView.animateWithDuration(0.2, animations: { () -> Void in
-                    print("1")
                     self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.4, blue: 0.4, alpha: 1)
                 }) { (Bool) -> Void in
-                    print("2")
                     UIView.animateWithDuration(0.2, animations: { () -> Void in
                         self.wrapperView.backgroundColor = self.backgroundColor
                         }, completion: { (Bool) -> Void in
-                            print("3")
                             UIView.animateWithDuration(0.2, animations: { () -> Void in
                                 self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.4, blue: 0.4, alpha: 1)
-
                                 }, completion: { (Bool) -> Void in
-                                    print("4")
                                     UIView.animateWithDuration(0.2, animations: { () -> Void in
                                         self.wrapperView.backgroundColor = self.backgroundColor
                                         }, completion:nil)
+                                    self.isAnimationGoing = false
                             })
                     })
-                    self.isAnimationGoing = false
                     
                     
                 }
-
-           
+                
+                // hide all images
+                self.cuala.hidden = true
+                self.crocodile.hidden = true
+                self.raccoon.hidden = true
+                self.chicken.hidden = true
+                self.chickenShadow.hidden = true
+                self.raccoonShadow.hidden = true
+                self.crocodileShadow.hidden = true
+                self.cualaShadow.hidden = true
+                
+                // show the star
+                self.greatJobImg.hidden = false
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -326,20 +371,8 @@ class AnimalsViewController: UIViewController {
     }
     
     @IBAction func refreshButtonTapped(sender: AnyObject) {
-        
         self.setConstraints()
-        
-        // enable images' shadows
-        self.cualaShadow.hidden = false
-        self.chickenShadow.hidden = false
-        self.crocodileShadow.hidden = false
-        self.raccoonShadow.hidden = false
-        
-        // reset matching triggers
-        self.isCualaMatch = false
-        self.isChickenMatch = false
-        self.isCrocodileMatch = false
-        self.isRaccoonMatch = false
+        self.setInitialTriggers()
     }
 }
 
