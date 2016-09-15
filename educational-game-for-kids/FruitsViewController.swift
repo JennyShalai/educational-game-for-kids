@@ -12,6 +12,7 @@ class FruitsViewController: UIViewController {
     
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
+    @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var menuBar: UINavigationBar!
     
     @IBOutlet weak var avocadoImg: UIImageView!
@@ -34,7 +35,10 @@ class FruitsViewController: UIViewController {
     var isFruitMatch: Bool = false
     var isBerryMatch: Bool = false
     
+    var isAnimationGoing: Bool = false
+    
     let maxIndexZ: CGFloat = 5
+    var backgroundColor: UIColor = UIColor.whiteColor()
     
     var avocadoPositionX: CGFloat = 0
     var avocadoPositionY: CGFloat = 0
@@ -48,6 +52,8 @@ class FruitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
+        self.backgroundColor = self.wrapperView.backgroundColor!
+        print("red \(self.backgroundColor)")
     }
     
     func setConstraints() {
@@ -282,8 +288,35 @@ class FruitsViewController: UIViewController {
     
     func matchValidation() {
         // checking are all fruits matching with their shadows
-        if self.isAvocadoMatch && self.isOrangeMatch && self.isFruitMatch && self.isBerryMatch {
-            print("MATCH")
+        if !isAnimationGoing {
+            if self.isAvocadoMatch && self.isOrangeMatch && self.isFruitMatch && self.isBerryMatch {
+                print("FRUITS MATCHED")
+                self.isAnimationGoing = true
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    print("1")
+                    self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.839216, blue: 0, alpha: 1)
+                }) { (Bool) -> Void in
+                    print("2")
+                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                        self.wrapperView.backgroundColor = self.backgroundColor
+                        }, completion: { (Bool) -> Void in
+                            print("3")
+                            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                                self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.839216, blue: 0, alpha: 1)
+
+                                }, completion: { (Bool) -> Void in
+                                    print("4")
+                                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                                        self.wrapperView.backgroundColor = self.backgroundColor
+                                        }, completion:nil)
+                            })
+                    })
+                    self.isAnimationGoing = false
+                    
+                    
+                }
+            }
         }
         
     }

@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ComicSansMSRegular.ttf">
+            <string>ComicSansMS</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Choice View Controller-->
         <scene sceneID="CDs-Kj-RBs">
@@ -41,20 +46,12 @@
                                 <rect key="frame" x="24" y="38" width="342" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="4sN-TD-hYG">
-                                <rect key="frame" x="-5" y="117" width="330" height="104"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="4sN-TD-hYG">
+                                <rect key="frame" x="35" y="262" width="305" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">The Match Shapes is a puzzle game where you need to place a picture into it's shadow. Choose animals or fruits to match help them match. Good luck!</string>
-                                        <attributes>
-                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
-                                            <color key="NSColor" red="0.2784313725" green="0.22352941179999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="18" name="ComicSansMS"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <string key="text">The Match Shapes is a puzzle game where you need to place a picture into it's shadow. Choose animals or fruits and help them match. Good luck!</string>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ComicSansMS" family="Comic Sans MS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -78,7 +75,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="AnimalsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AnimalsViewController" customModule="educational_game_for_kids" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="wrapperView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -151,6 +148,7 @@
                         <outlet property="menuBar" destination="5lA-CC-LVp" id="dUJ-fI-ey9"/>
                         <outlet property="raccoon" destination="gh4-Lw-mtm" id="KEX-iS-96q"/>
                         <outlet property="raccoonShadow" destination="Yfv-BD-hFh" id="hjy-ul-vIy"/>
+                        <outlet property="wrapperView" destination="8bC-Xf-vdC" id="PZA-sf-vwk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="bk4-ka-ZS9">
+                            <view contentMode="scaleToFill" id="bk4-ka-ZS9" userLabel="wrapper">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -236,6 +234,7 @@
                         <outlet property="menuBar" destination="gVq-30-e29" id="v8e-vh-3a3"/>
                         <outlet property="orangeImg" destination="J5t-CH-b2W" id="rGW-Fy-Gib"/>
                         <outlet property="orangeShadowImg" destination="9rM-bO-M6J" id="LGh-sm-RYF"/>
+                        <outlet property="wrapperView" destination="bk4-ka-ZS9" id="jt8-MY-3B1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cf-wF-vDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

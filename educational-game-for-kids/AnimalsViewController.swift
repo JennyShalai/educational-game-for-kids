@@ -13,6 +13,7 @@ class AnimalsViewController: UIViewController {
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     @IBOutlet weak var menuBar: UINavigationBar!
+    @IBOutlet var wrapperView: UIView!
     
     @IBOutlet weak var chicken: UIImageView!
     @IBOutlet weak var crocodile: UIImageView!
@@ -31,6 +32,7 @@ class AnimalsViewController: UIViewController {
     var isCrocodileMatch: Bool = false
     var isCualaMatch: Bool = false
     var isRaccoonMatch: Bool = false
+    var isAnimationGoing: Bool = false
     
     let maxIndexZ: CGFloat = 5
     
@@ -43,9 +45,13 @@ class AnimalsViewController: UIViewController {
     var raccoonPositionX: CGFloat = 0
     var raccoonPositionY: CGFloat = 0
     
+    var backgroundColor: UIColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
+        self.backgroundColor = self.wrapperView.backgroundColor!
+        print("yellow \(self.backgroundColor)")
     }
     
     func setConstraints() {
@@ -204,11 +210,13 @@ class AnimalsViewController: UIViewController {
         
         self.checkCollisions()
         
+        // reset move activity triggers
         self.isChickenMoving = false
         self.isCrocodileMoving = false
         self.isRaccoonMoving = false
         self.isCualaMoving = false
         
+        //set Z-index for image position
         self.cuala.layer.zPosition = 4
         self.chicken.layer.zPosition = 3
         self.crocodile.layer.zPosition = 2
@@ -252,13 +260,11 @@ class AnimalsViewController: UIViewController {
         
         // if animal image does not match with shadow, push image back to it's respond place
         if CGRectIntersectsRect(cuala.frame, crocodileShadow.frame) || CGRectIntersectsRect(cuala.frame, raccoonShadow.frame) || CGRectIntersectsRect(cuala.frame, chickenShadow.frame) {
-            
             self.cuala.frame.origin.x = self.cualaPositionX
             self.cuala.frame.origin.y = self.cualaPositionY
         }
         
         if CGRectIntersectsRect(crocodile.frame, cualaShadow.frame) || CGRectIntersectsRect(crocodile.frame, raccoonShadow.frame) || CGRectIntersectsRect(crocodile.frame, chickenShadow.frame) {
-            
             self.crocodile.frame.origin.x = self.crocodilePositionX
             self.crocodile.frame.origin.y = self.crocodilePositionY
         }
@@ -276,8 +282,37 @@ class AnimalsViewController: UIViewController {
     
     func matchValidation() {
         // checking are all animals matching with their shadows
-        if self.isCualaMatch && self.isChickenMatch && self.isCrocodileMatch && self.isRaccoonMatch {
-            print("MATCH")
+        if !isAnimationGoing {
+            if self.isCualaMatch && self.isChickenMatch && self.isCrocodileMatch && self.isRaccoonMatch {
+                print("MATCH")
+                self.isAnimationGoing = true
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    print("1")
+                    self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.4, blue: 0.4, alpha: 1)
+                }) { (Bool) -> Void in
+                    print("2")
+                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                        self.wrapperView.backgroundColor = self.backgroundColor
+                        }, completion: { (Bool) -> Void in
+                            print("3")
+                            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                                self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.4, blue: 0.4, alpha: 1)
+
+                                }, completion: { (Bool) -> Void in
+                                    print("4")
+                                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                                        self.wrapperView.backgroundColor = self.backgroundColor
+                                        }, completion:nil)
+                            })
+                    })
+                    self.isAnimationGoing = false
+                    
+                    
+                }
+
+           
+            }
         }
         
     }
@@ -291,11 +326,16 @@ class AnimalsViewController: UIViewController {
     }
     
     @IBAction func refreshButtonTapped(sender: AnyObject) {
+        
         self.setConstraints()
+        
+        // enable images' shadows
         self.cualaShadow.hidden = false
         self.chickenShadow.hidden = false
         self.crocodileShadow.hidden = false
         self.raccoonShadow.hidden = false
+        
+        // reset matching triggers
         self.isCualaMatch = false
         self.isChickenMatch = false
         self.isCrocodileMatch = false
