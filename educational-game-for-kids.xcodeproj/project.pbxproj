@@ -13,6 +13,7 @@
 		1B05F35E1D81BD94006B5B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35D1D81BD94006B5B90 /* Assets.xcassets */; };
 		1B05F3611D81BD94006B5B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */; };
 		1B7B86691D8AF15E004E9D07 /* gj.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7B86681D8AF15E004E9D07 /* gj.png */; };
+		1B7B86711D8B9E30004E9D07 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7B86701D8B9E30004E9D07 /* icon.png */; };
 		1BF4FDFE1D841F61006998A6 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */; };
 		1BF4FE021D844AAB006998A6 /* FruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF4FE011D844AAB006998A6 /* FruitsViewController.swift */; };
 		1BF4FE501D85A37A006998A6 /* raccoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF4FE441D85A37A006998A6 /* raccoon.png */; };
@@ -47,6 +48,7 @@
 		1B05F3601D81BD94006B5B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B05F3621D81BD94006B5B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B7B86681D8AF15E004E9D07 /* gj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gj.png; sourceTree = "<group>"; };
+		1B7B86701D8B9E30004E9D07 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1BBB69271D896DB600D00E1E /* ComicSansMSRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComicSansMSRegular.ttf; sourceTree = "<group>"; };
 		1BF4FDFD1D841F61006998A6 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		1BF4FE011D844AAB006998A6 /* FruitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitsViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				1B05F35D1D81BD94006B5B90 /* Assets.xcassets */,
 				1B05F35F1D81BD94006B5B90 /* LaunchScreen.storyboard */,
 				1B05F3621D81BD94006B5B90 /* Info.plist */,
+				1B7B86701D8B9E30004E9D07 /* icon.png */,
 				1BF4FE6C1D863875006998A6 /* logo.png */,
 				1BF4FE441D85A37A006998A6 /* raccoon.png */,
 				1BF4FE451D85A37A006998A6 /* bearShadow.png */,
@@ -197,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7B86711D8B9E30004E9D07 /* icon.png in Resources */,
 				1BF4FE6A1D85A6DB006998A6 /* fruit.png in Resources */,
 				1BF4FE6B1D85A6DB006998A6 /* fruitShadow.png in Resources */,
 				1BF4FE561D85A37A006998A6 /* crocodileShadow.png in Resources */,

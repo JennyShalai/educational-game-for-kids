@@ -17,11 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bear.png" translatesAutoresizingMaskIntoConstraints="NO" id="l23-V2-STV">
-                                <rect key="frame" x="110" y="195" width="100" height="90"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="l23-V2-STV">
+                                <rect key="frame" x="38" y="118" width="244" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="244" id="usN-Ti-z9S"/>
+                                    <constraint firstAttribute="height" constant="244" id="zxi-T4-kHu"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.83921568629999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l23-V2-STV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dNI-nQ-K94"/>
+                            <constraint firstItem="l23-V2-STV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wY1-YN-2B0"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
@@ -31,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bear.png" width="324" height="275"/>
+        <image name="icon.png" width="1024" height="1024"/>
     </resources>
 </document>
