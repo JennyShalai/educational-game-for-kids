@@ -64,75 +64,83 @@ class FruitsViewController: UIViewController {
         
         let heightOfGameArea = self.view.frame.height - 64
         
+        
+        self.wrapperView.removeConstraints(self.wrapperView.constraints)
+        self.wrapperView.translatesAutoresizingMaskIntoConstraints = false
+        self.wrapperView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
+        self.wrapperView.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
+        self.wrapperView.heightAnchor.constraintEqualToAnchor(self.view.heightAnchor).active = true
+        self.wrapperView.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
+        
         // menu bar up top
         self.menuBar.removeConstraints(self.menuBar.constraints)
         self.menuBar.translatesAutoresizingMaskIntoConstraints = false
-        self.menuBar.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20).active = true
-        self.menuBar.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
-        self.menuBar.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
+        self.menuBar.topAnchor.constraintEqualToAnchor(self.wrapperView.topAnchor, constant: 20).active = true
+        self.menuBar.leftAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor).active = true
+        self.menuBar.widthAnchor.constraintEqualToAnchor(self.wrapperView.widthAnchor).active = true
         self.menuBar.heightAnchor.constraintEqualToConstant(44).active = true
         
         // avocado
         self.avocadoImg.removeConstraints(self.avocadoImg.constraints)
         self.avocadoImg.translatesAutoresizingMaskIntoConstraints = false
-        self.avocadoImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
-        self.avocadoImg.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.avocadoImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
+        self.avocadoImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
         self.avocadoImg.heightAnchor.constraintEqualToConstant(82).active = true
         self.avocadoImg.widthAnchor.constraintEqualToConstant(81).active = true
         
         // orange
         self.orangeImg.removeConstraints(self.orangeImg.constraints)
         self.orangeImg.translatesAutoresizingMaskIntoConstraints = false
-        self.orangeImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
-        self.orangeImg.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.orangeImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
+        self.orangeImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
         self.orangeImg.heightAnchor.constraintEqualToConstant(81).active = true
         self.orangeImg.widthAnchor.constraintEqualToConstant(81).active = true
         
         // fruit
         self.fruitImg.removeConstraints(self.fruitImg.constraints)
         self.fruitImg.translatesAutoresizingMaskIntoConstraints = false
-        self.fruitImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
-        self.fruitImg.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.fruitImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
+        self.fruitImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
         self.fruitImg.heightAnchor.constraintEqualToConstant(81).active = true
         self.fruitImg.widthAnchor.constraintEqualToConstant(81).active = true
         
         // berry
         self.berryImg.removeConstraints(self.berryImg.constraints)
         self.berryImg.translatesAutoresizingMaskIntoConstraints = false
-        self.berryImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
-        self.berryImg.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
+        self.berryImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
+        self.berryImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
         self.berryImg.heightAnchor.constraintEqualToConstant(90).active = true
         self.berryImg.widthAnchor.constraintEqualToConstant(71).active = true
         
         // avocado shadow
         self.avocadoShadowImg.removeConstraints(self.avocadoShadowImg.constraints)
         self.avocadoShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.avocadoShadowImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
-        self.avocadoShadowImg.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.avocadoShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
+        self.avocadoShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
         self.avocadoShadowImg.heightAnchor.constraintEqualToConstant(82).active = true
         self.avocadoShadowImg.widthAnchor.constraintEqualToConstant(81).active = true
         
         // orange shadow
         self.orangeShadowImg.removeConstraints(self.orangeShadowImg.constraints)
         self.orangeShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.orangeShadowImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
-        self.orangeShadowImg.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.orangeShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
+        self.orangeShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
         self.orangeShadowImg.heightAnchor.constraintEqualToConstant(81).active = true
         self.orangeShadowImg.widthAnchor.constraintEqualToConstant(81).active = true
         
         // fruit shadow
         self.fruitShadowImg.removeConstraints(self.fruitShadowImg.constraints)
         self.fruitShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.fruitShadowImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
-        self.fruitShadowImg.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.fruitShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
+        self.fruitShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
         self.fruitShadowImg.heightAnchor.constraintEqualToConstant(81).active = true
         self.fruitShadowImg.widthAnchor.constraintEqualToConstant(81).active = true
         
         // berry shadow
         self.berryShadowImg.removeConstraints(self.berryShadowImg.constraints)
         self.berryShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.berryShadowImg.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
-        self.berryShadowImg.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
+        self.berryShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
+        self.berryShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
         self.berryShadowImg.heightAnchor.constraintEqualToConstant(90).active = true
         self.berryShadowImg.widthAnchor.constraintEqualToConstant(71).active = true
         
