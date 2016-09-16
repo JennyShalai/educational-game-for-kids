@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="ChoiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cfq-IG-Loh" customClass="ChoiceViewController" customModule="educational_game_for_kids" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Of3-Dt-v6F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="center" id="Bwb-cL-GwU" userLabel="leftView">
@@ -46,7 +46,7 @@
                                 <rect key="frame" x="24" y="38" width="342" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="4sN-TD-hYG">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="4sN-TD-hYG">
                                 <rect key="frame" x="35" y="262" width="305" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">The Match Shapes is a puzzle game where you need to place a picture into it's shadow. Choose animals or fruits and help them match. Good luck!</string>
@@ -64,7 +64,6 @@
                         <outlet property="logoImg" destination="0pC-7F-qyA" id="fgQ-A1-bUe"/>
                         <outlet property="rightView" destination="o8f-2g-LQs" id="5nH-No-vq1"/>
                         <outlet property="textView" destination="4sN-TD-hYG" id="4c5-NP-psQ"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="pushNextVC" id="lBB-dA-w5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBC-Fa-Bj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,12 +81,15 @@
                             <navigationBar contentMode="scaleToFill" id="5lA-CC-LVp">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Match the Animals" id="7cp-ae-hxd">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="889-Th-OBH">
                                             <connections>
                                                 <action selector="doneButtonTapped:" destination="BYZ-38-t0r" id="Pjf-N8-VdL"/>
-                                                <segue destination="Cfq-IG-Loh" kind="modal" identifier="pushBackVC" id="wgd-5M-jjL"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="bxS-pT-fM0">
@@ -101,17 +103,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chickenShadow.png" id="LiL-fE-x6h" userLabel="chickenShadow">
                                 <rect key="frame" x="257" y="105" width="71" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.83921568627450982" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodileShadow.png" id="fcT-Lp-uhs" userLabel="crocodileShadow">
                                 <rect key="frame" x="254" y="225" width="76" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.83921568627450982" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raccoonShadow.png" id="Yfv-BD-hFh" userLabel="raccoonShadow">
                                 <rect key="frame" x="254" y="492" width="75" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.83921568627450982" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken.png" id="iqC-kS-Tew" userLabel="chickenImg">
                                 <rect key="frame" x="34" y="228" width="71" height="71"/>
@@ -132,7 +134,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kualaShadow.png" id="ymi-my-Mwq" userLabel="kualaShadow">
                                 <rect key="frame" x="242" y="358" width="100" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.83921568627450982" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gj.png" id="BK7-xS-1fe">
                                 <rect key="frame" x="162" y="311" width="50" height="46"/>
@@ -153,7 +155,7 @@
                         <outlet property="menuBar" destination="5lA-CC-LVp" id="dUJ-fI-ey9"/>
                         <outlet property="raccoon" destination="gh4-Lw-mtm" id="KEX-iS-96q"/>
                         <outlet property="raccoonShadow" destination="Yfv-BD-hFh" id="hjy-ul-vIy"/>
-                        <outlet property="wrapperView" destination="8bC-Xf-vdC" id="PZA-sf-vwk"/>
+                        <outlet property="wrapperView" destination="8bC-Xf-vdC" id="krk-ew-faK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,6 +193,7 @@
                                     <navigationBar contentMode="scaleToFill" id="gVq-30-e29">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem title="Match Fruits" id="fiX-9J-PdE">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="done" id="nP7-RU-91E">

@@ -372,8 +372,7 @@ class FruitsViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ChoiceViewController")
-        self.presentViewController(nextViewController, animated:true, completion:nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func refreshButtonTapped(sender: AnyObject) {

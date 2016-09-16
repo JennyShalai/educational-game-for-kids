@@ -33,6 +33,7 @@ class ChoiceViewController: UIViewController {
     }
     
     func setConstraints() {
+        //reset storyboard constraints
         self.view.removeConstraints(self.view.constraints)
         self.view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -108,20 +109,21 @@ class ChoiceViewController: UIViewController {
     
     func setGestures() {
         // set tap action for animals image
-        let animalsImageView = self.animalsImg
+        let animalsImageView = self.leftView
         let tapAnimalsGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.animalsImageTapped(_:)))
         animalsImageView.userInteractionEnabled = true
         animalsImageView.addGestureRecognizer(tapAnimalsGestureRecognizer)
         
         // set tap action for numbers image
-        let numbersImageView = self.fruitsImg
+        let numbersImageView = self.rightView
         let tapFruitsGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.fruitsImageTapped(_:)))
         numbersImageView.userInteractionEnabled = true
         numbersImageView.addGestureRecognizer(tapFruitsGestureRecognizer)
     }
     
     func animalsImageTapped(img: AnyObject) {
-         self.performSegueWithIdentifier("pushNextVC", sender: self)
+        let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AnimalsViewController")
+        self.presentViewController(nextViewController, animated:true, completion:nil)
     }
 
     func fruitsImageTapped(img: AnyObject) {

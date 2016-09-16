@@ -57,7 +57,7 @@ class AnimalsViewController: UIViewController {
         self.setInitialTriggers()
         
         self.backgroundColor = self.wrapperView.backgroundColor!
-        
+        self.menuBar.backgroundColor = self.backgroundColor
     }
     
     func setConstraints() {
@@ -367,7 +367,7 @@ class AnimalsViewController: UIViewController {
     }
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("pushBackVC", sender: self)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func refreshButtonTapped(sender: AnyObject) {
