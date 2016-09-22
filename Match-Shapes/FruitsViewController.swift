@@ -39,7 +39,7 @@ class FruitsViewController: UIViewController {
     var isAnimationGoing: Bool = false
     
     let maxIndexZ: CGFloat = 5
-    var backgroundColor: UIColor = UIColor.whiteColor()
+    var backgroundColor: UIColor = UIColor.white
     
     var avocadoPositionX: CGFloat = 0
     var avocadoPositionY: CGFloat = 0
@@ -64,93 +64,96 @@ class FruitsViewController: UIViewController {
         
         let heightOfGameArea = self.view.frame.height - 64
         
+        //reset storyboard constraints
+        self.view.removeConstraints(self.view.constraints)
         
+        // wrapper view for all images
         self.wrapperView.removeConstraints(self.wrapperView.constraints)
         self.wrapperView.translatesAutoresizingMaskIntoConstraints = false
-        self.wrapperView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
-        self.wrapperView.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
-        self.wrapperView.heightAnchor.constraintEqualToAnchor(self.view.heightAnchor).active = true
-        self.wrapperView.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
+        self.wrapperView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.wrapperView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.wrapperView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
+        self.wrapperView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         // menu bar up top
         self.menuBar.removeConstraints(self.menuBar.constraints)
         self.menuBar.translatesAutoresizingMaskIntoConstraints = false
-        self.menuBar.topAnchor.constraintEqualToAnchor(self.wrapperView.topAnchor, constant: 20).active = true
-        self.menuBar.leftAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor).active = true
-        self.menuBar.widthAnchor.constraintEqualToAnchor(self.wrapperView.widthAnchor).active = true
-        self.menuBar.heightAnchor.constraintEqualToConstant(44).active = true
+        self.menuBar.topAnchor.constraint(equalTo: self.wrapperView.topAnchor, constant: 20).isActive = true
+        self.menuBar.leftAnchor.constraint(equalTo: self.wrapperView.leftAnchor).isActive = true
+        self.menuBar.widthAnchor.constraint(equalTo: self.wrapperView.widthAnchor).isActive = true
+        self.menuBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         // avocado
         self.avocadoImg.removeConstraints(self.avocadoImg.constraints)
         self.avocadoImg.translatesAutoresizingMaskIntoConstraints = false
-        self.avocadoImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
-        self.avocadoImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
-        self.avocadoImg.heightAnchor.constraintEqualToConstant(82).active = true
-        self.avocadoImg.widthAnchor.constraintEqualToConstant(81).active = true
+        self.avocadoImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).isActive = true
+        self.avocadoImg.centerXAnchor.constraint(equalTo: self.wrapperView.leftAnchor, constant: 65).isActive = true
+        self.avocadoImg.heightAnchor.constraint(equalToConstant: 82).isActive = true
+        self.avocadoImg.widthAnchor.constraint(equalToConstant: 81).isActive = true
         
         // orange
         self.orangeImg.removeConstraints(self.orangeImg.constraints)
         self.orangeImg.translatesAutoresizingMaskIntoConstraints = false
-        self.orangeImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
-        self.orangeImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
-        self.orangeImg.heightAnchor.constraintEqualToConstant(81).active = true
-        self.orangeImg.widthAnchor.constraintEqualToConstant(81).active = true
+        self.orangeImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).isActive = true
+        self.orangeImg.centerXAnchor.constraint(equalTo: self.wrapperView.leftAnchor, constant: 65).isActive = true
+        self.orangeImg.heightAnchor.constraint(equalToConstant: 81).isActive = true
+        self.orangeImg.widthAnchor.constraint(equalToConstant: 81).isActive = true
         
         // fruit
         self.fruitImg.removeConstraints(self.fruitImg.constraints)
         self.fruitImg.translatesAutoresizingMaskIntoConstraints = false
-        self.fruitImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
-        self.fruitImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
-        self.fruitImg.heightAnchor.constraintEqualToConstant(81).active = true
-        self.fruitImg.widthAnchor.constraintEqualToConstant(81).active = true
+        self.fruitImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).isActive = true
+        self.fruitImg.centerXAnchor.constraint(equalTo: self.wrapperView.leftAnchor, constant: 65).isActive = true
+        self.fruitImg.heightAnchor.constraint(equalToConstant: 81).isActive = true
+        self.fruitImg.widthAnchor.constraint(equalToConstant: 81).isActive = true
         
         // berry
         self.berryImg.removeConstraints(self.berryImg.constraints)
         self.berryImg.translatesAutoresizingMaskIntoConstraints = false
-        self.berryImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
-        self.berryImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.leftAnchor, constant: 65).active = true
-        self.berryImg.heightAnchor.constraintEqualToConstant(90).active = true
-        self.berryImg.widthAnchor.constraintEqualToConstant(71).active = true
+        self.berryImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).isActive = true
+        self.berryImg.centerXAnchor.constraint(equalTo: self.wrapperView.leftAnchor, constant: 65).isActive = true
+        self.berryImg.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        self.berryImg.widthAnchor.constraint(equalToConstant: 71).isActive = true
         
         // avocado shadow
         self.avocadoShadowImg.removeConstraints(self.avocadoShadowImg.constraints)
         self.avocadoShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.avocadoShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
-        self.avocadoShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
-        self.avocadoShadowImg.heightAnchor.constraintEqualToConstant(82).active = true
-        self.avocadoShadowImg.widthAnchor.constraintEqualToConstant(81).active = true
+        self.avocadoShadowImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).isActive = true
+        self.avocadoShadowImg.centerXAnchor.constraint(equalTo: self.wrapperView.rightAnchor, constant: -65).isActive = true
+        self.avocadoShadowImg.heightAnchor.constraint(equalToConstant: 82).isActive = true
+        self.avocadoShadowImg.widthAnchor.constraint(equalToConstant: 81).isActive = true
         
         // orange shadow
         self.orangeShadowImg.removeConstraints(self.orangeShadowImg.constraints)
         self.orangeShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.orangeShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
-        self.orangeShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
-        self.orangeShadowImg.heightAnchor.constraintEqualToConstant(81).active = true
-        self.orangeShadowImg.widthAnchor.constraintEqualToConstant(81).active = true
+        self.orangeShadowImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).isActive = true
+        self.orangeShadowImg.centerXAnchor.constraint(equalTo: self.wrapperView.rightAnchor, constant: -65).isActive = true
+        self.orangeShadowImg.heightAnchor.constraint(equalToConstant: 81).isActive = true
+        self.orangeShadowImg.widthAnchor.constraint(equalToConstant: 81).isActive = true
         
         // fruit shadow
         self.fruitShadowImg.removeConstraints(self.fruitShadowImg.constraints)
         self.fruitShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.fruitShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
-        self.fruitShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
-        self.fruitShadowImg.heightAnchor.constraintEqualToConstant(81).active = true
-        self.fruitShadowImg.widthAnchor.constraintEqualToConstant(81).active = true
+        self.fruitShadowImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).isActive = true
+        self.fruitShadowImg.centerXAnchor.constraint(equalTo: self.wrapperView.rightAnchor, constant: -65).isActive = true
+        self.fruitShadowImg.heightAnchor.constraint(equalToConstant: 81).isActive = true
+        self.fruitShadowImg.widthAnchor.constraint(equalToConstant: 81).isActive = true
         
         // berry shadow
         self.berryShadowImg.removeConstraints(self.berryShadowImg.constraints)
         self.berryShadowImg.translatesAutoresizingMaskIntoConstraints = false
-        self.berryShadowImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
-        self.berryShadowImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.rightAnchor, constant: -65).active = true
-        self.berryShadowImg.heightAnchor.constraintEqualToConstant(90).active = true
-        self.berryShadowImg.widthAnchor.constraintEqualToConstant(71).active = true
+        self.berryShadowImg.centerYAnchor.constraint(equalTo: self.wrapperView.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).isActive = true
+        self.berryShadowImg.centerXAnchor.constraint(equalTo: self.wrapperView.rightAnchor, constant: -65).isActive = true
+        self.berryShadowImg.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        self.berryShadowImg.widthAnchor.constraint(equalToConstant: 71).isActive = true
         
         //  great Job Star
         self.greatJobImg.removeConstraints(greatJobImg.constraints)
         self.greatJobImg.translatesAutoresizingMaskIntoConstraints = false
-        self.greatJobImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.centerXAnchor).active = true
-        self.greatJobImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.centerYAnchor).active = true
-        self.greatJobImg.heightAnchor.constraintEqualToConstant(200).active = true
-        self.greatJobImg.widthAnchor.constraintEqualToConstant(200).active = true
+        self.greatJobImg.centerXAnchor.constraint(equalTo: self.wrapperView.centerXAnchor).isActive = true
+        self.greatJobImg.centerYAnchor.constraint(equalTo: self.wrapperView.centerYAnchor).isActive = true
+        self.greatJobImg.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        self.greatJobImg.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
     func setDefaultPositions() {
@@ -173,15 +176,15 @@ class FruitsViewController: UIViewController {
     func setInitialTriggers() {
         
         // showing images and hidding "Great Job" star
-        self.greatJobImg.hidden = true
-        self.avocadoShadowImg.hidden = false
-        self.orangeShadowImg.hidden = false
-        self.fruitShadowImg.hidden = false
-        self.berryShadowImg.hidden = false
-        self.avocadoImg.hidden = false
-        self.orangeImg.hidden = false
-        self.fruitImg.hidden = false
-        self.berryImg.hidden = false
+        self.greatJobImg.isHidden = true
+        self.avocadoShadowImg.isHidden = false
+        self.orangeShadowImg.isHidden = false
+        self.fruitShadowImg.isHidden = false
+        self.berryShadowImg.isHidden = false
+        self.avocadoImg.isHidden = false
+        self.orangeImg.isHidden = false
+        self.fruitImg.isHidden = false
+        self.berryImg.isHidden = false
         
         self.isAvocadoMoving = false
         self.isOrangeMoving = false
@@ -197,10 +200,10 @@ class FruitsViewController: UIViewController {
         self.isAnimationGoing = false
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
-            let location = touch.locationInView(self.view)
+            let location = touch.location(in: self.view)
             
             if self.avocadoImg.frame.contains(location) && !isAvocadoMatch {
                 self.avocadoImg.center = location
@@ -233,10 +236,10 @@ class FruitsViewController: UIViewController {
     }
     
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
-            let location = touch.locationInView(self.view)
+            let location = touch.location(in: self.view)
             
             if self.avocadoImg.frame.contains(location) && self.isAvocadoMoving {
                 self.avocadoImg.center = location
@@ -256,7 +259,7 @@ class FruitsViewController: UIViewController {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.checkCollisions()
         
@@ -281,53 +284,53 @@ class FruitsViewController: UIViewController {
         
         // if fruits image matchs with it's shadow
         
-        if CGRectIntersectsRect(avocadoImg.frame, avocadoShadowImg.frame) {
+        if avocadoImg.frame.intersects(avocadoShadowImg.frame) {
             self.avocadoImg.center = self.avocadoShadowImg.center
-            self.avocadoShadowImg.hidden = true
+            self.avocadoShadowImg.isHidden = true
             self.isAvocadoMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(orangeImg.frame, orangeShadowImg.frame) {
+        if orangeImg.frame.intersects(orangeShadowImg.frame) {
             self.orangeImg.center = self.orangeShadowImg.center
-            self.orangeShadowImg.hidden = true
+            self.orangeShadowImg.isHidden = true
             self.isOrangeMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(fruitImg.frame, fruitShadowImg.frame) {
+        if fruitImg.frame.intersects(fruitShadowImg.frame) {
             self.fruitImg.center = self.fruitShadowImg.center
-            self.fruitShadowImg.hidden = true
+            self.fruitShadowImg.isHidden = true
             self.isFruitMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(berryImg.frame, berryShadowImg.frame) {
+        if berryImg.frame.intersects(berryShadowImg.frame) {
             self.berryImg.center = self.berryShadowImg.center
-            self.berryShadowImg.hidden = true
+            self.berryShadowImg.isHidden = true
             self.isBerryMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(avocadoImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(avocadoImg.frame, fruitShadowImg.frame) || CGRectIntersectsRect(avocadoImg.frame, berryShadowImg.frame) {
+        if avocadoImg.frame.intersects(orangeShadowImg.frame) || avocadoImg.frame.intersects(fruitShadowImg.frame) || avocadoImg.frame.intersects(berryShadowImg.frame) {
             self.avocadoImg.frame.origin.x = self.avocadoPositionX
             self.avocadoImg.frame.origin.y = self.avocadoPositionY + 64
             print("avocado \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
         }
         
-        if CGRectIntersectsRect(orangeImg.frame, avocadoShadowImg.frame) || CGRectIntersectsRect(orangeImg.frame, fruitShadowImg.frame) || CGRectIntersectsRect(orangeImg.frame, berryShadowImg.frame) {
+        if orangeImg.frame.intersects(avocadoShadowImg.frame) || orangeImg.frame.intersects(fruitShadowImg.frame) || orangeImg.frame.intersects(berryShadowImg.frame) {
             self.orangeImg.frame.origin.x = self.orangePositionX
             self.orangeImg.frame.origin.y = self.orangePositionY + 64
             print("orange \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
         }
         
-        if CGRectIntersectsRect(fruitImg.frame, avocadoShadowImg.frame) || CGRectIntersectsRect(fruitImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(fruitImg.frame, berryShadowImg.frame) {
+        if fruitImg.frame.intersects(avocadoShadowImg.frame) || fruitImg.frame.intersects(orangeShadowImg.frame) || fruitImg.frame.intersects(berryShadowImg.frame) {
             self.fruitImg.frame.origin.x = self.fruitPositionX
             self.fruitImg.frame.origin.y = self.fruitPositionY + 64
             print("fruit \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
         }
         
-        if CGRectIntersectsRect(berryImg.frame, avocadoShadowImg.frame) || CGRectIntersectsRect(berryImg.frame, orangeShadowImg.frame) || CGRectIntersectsRect(berryImg.frame, fruitShadowImg.frame) {
+        if berryImg.frame.intersects(avocadoShadowImg.frame) || berryImg.frame.intersects(orangeShadowImg.frame) || berryImg.frame.intersects(fruitShadowImg.frame) {
             self.berryImg.frame.origin.x = self.berryPositionX
             self.berryImg.frame.origin.y = self.berryPositionY + 64
             print("berry \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
@@ -342,35 +345,35 @@ class FruitsViewController: UIViewController {
                 // animating screen background when all images match shadows
                 self.isAnimationGoing = true
                 
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.839216, blue: 0, alpha: 1)
-                }) { (true) -> Void in
-                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                }, completion: { (true) -> Void in
+                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
                         self.wrapperView.backgroundColor = self.backgroundColor
                         }, completion: { (true) -> Void in
-                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            UIView.animate(withDuration: 0.3, animations: { () -> Void in
                                 self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.839216, blue: 0, alpha: 1)
                                 }, completion: { (true) -> Void in
-                                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
                                         self.wrapperView.backgroundColor = self.backgroundColor
                                         }, completion:nil)
                                     self.isAnimationGoing = false
                             })
                     })
-                }
+                }) 
                 
                 // hide all images
-                self.avocadoShadowImg.hidden = true
-                self.orangeShadowImg.hidden = true
-                self.fruitShadowImg.hidden = true
-                self.berryShadowImg.hidden = true
-                self.avocadoImg.hidden = true
-                self.orangeImg.hidden = true
-                self.fruitImg.hidden = true
-                self.berryImg.hidden = true
+                self.avocadoShadowImg.isHidden = true
+                self.orangeShadowImg.isHidden = true
+                self.fruitShadowImg.isHidden = true
+                self.berryShadowImg.isHidden = true
+                self.avocadoImg.isHidden = true
+                self.orangeImg.isHidden = true
+                self.fruitImg.isHidden = true
+                self.berryImg.isHidden = true
                 
                 // show the star
-                self.greatJobImg.hidden = false
+                self.greatJobImg.isHidden = false
             }
         }
     }
@@ -379,11 +382,12 @@ class FruitsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func doneButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonTapped(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func refreshButtonTapped(sender: AnyObject) {
+    @IBAction func refreshButtonTapped(_ sender: AnyObject) {
+        print("WORKS")
         self.setConstraints()
         self.setInitialTriggers()
     }

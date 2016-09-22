@@ -24,81 +24,73 @@ class ChoiceViewController: UIViewController {
         self.setGestures()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear \(self.view.frame)")
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear \(self.view.frame)")
     }
     
     func setConstraints() {
+        
         //reset storyboard constraints
         self.view.removeConstraints(self.view.constraints)
-        self.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        let frame = self.view.frame;
-        // let margins = self.view.layoutMargins
-        let marginsGuide = self.view.layoutMarginsGuide
-        self.view.leftAnchor.constraintEqualToAnchor(marginsGuide.leftAnchor)
-        self.view.topAnchor.constraintEqualToAnchor(marginsGuide.topAnchor)
-        self.view.widthAnchor.constraintEqualToConstant(frame.width).active = true
-        self.view.heightAnchor.constraintEqualToConstant(frame.height).active = true
         
         // leftView yellow side
         self.leftView.removeConstraints(self.leftView.constraints)
         self.leftView.translatesAutoresizingMaskIntoConstraints = false
-        self.leftView.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
-        self.leftView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
-        self.leftView.heightAnchor.constraintEqualToAnchor(self.view.heightAnchor, multiplier: 1.0).active = true
-        self.leftView.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor, multiplier: 0.5).active = true
+        self.leftView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.leftView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.leftView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1.0).isActive = true
+        self.leftView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
     
         // leftView red side 
         self.rightView.removeConstraints(self.rightView.constraints)
         self.rightView.translatesAutoresizingMaskIntoConstraints = false
-        self.rightView.rightAnchor.constraintEqualToAnchor(self.view.rightAnchor).active = true
-        self.rightView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
-        self.rightView.heightAnchor.constraintEqualToAnchor(self.view.heightAnchor, multiplier: 1.0).active = true
-        self.rightView.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor, multiplier: 0.5).active = true
+        self.rightView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        self.rightView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.rightView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1.0).isActive = true
+        self.rightView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
     
         // logo
         self.logoImg.removeConstraints(self.logoImg.constraints)
         self.logoImg.translatesAutoresizingMaskIntoConstraints = false
-        self.logoImg.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
-        self.logoImg.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 40).active = true
-        self.logoImg.heightAnchor.constraintEqualToConstant(60).active = true
-        self.logoImg.widthAnchor.constraintEqualToConstant(300).active = true
+        self.logoImg.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.logoImg.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive = true
+        self.logoImg.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        self.logoImg.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
         // text
         self.textView.removeConstraints(self.textView.constraints)
         self.textView.translatesAutoresizingMaskIntoConstraints = false
-        self.textView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
-        self.textView.topAnchor.constraintEqualToAnchor(self.logoImg.bottomAnchor, constant: 10).active = true
-        self.textView.bottomAnchor.constraintEqualToAnchor(self.animalsImg.topAnchor).active = true
+        self.textView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.textView.topAnchor.constraint(equalTo: self.logoImg.bottomAnchor, constant: 10).isActive = true
+        self.textView.bottomAnchor.constraint(equalTo: self.animalsImg.topAnchor).isActive = true
         //self.textView.heightAnchor.constraintEqualToConstant(360).active = true
-        self.textView.widthAnchor.constraintEqualToConstant(300).active = true
+        self.textView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
         // animals image
         self.animalsImg.removeConstraints(self.animalsImg.constraints)
         self.animalsImg.translatesAutoresizingMaskIntoConstraints = false
-        self.animalsImg.centerXAnchor.constraintEqualToAnchor(self.leftView.centerXAnchor).active = true
-        self.animalsImg.centerYAnchor.constraintEqualToAnchor(self.leftView.centerYAnchor, constant: 100).active = true
-        self.animalsImg.heightAnchor.constraintEqualToConstant(140).active = true
-        self.animalsImg.widthAnchor.constraintEqualToConstant(140).active = true
+        self.animalsImg.centerXAnchor.constraint(equalTo: self.leftView.centerXAnchor).isActive = true
+        self.animalsImg.centerYAnchor.constraint(equalTo: self.leftView.centerYAnchor, constant: 100).isActive = true
+        self.animalsImg.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        self.animalsImg.widthAnchor.constraint(equalToConstant: 140).isActive = true
         
         // fruits image
         self.fruitsImg.removeConstraints(self.fruitsImg.constraints)
         self.fruitsImg.translatesAutoresizingMaskIntoConstraints = false
-        self.fruitsImg.centerXAnchor.constraintEqualToAnchor(self.rightView.centerXAnchor).active = true
-        self.fruitsImg.centerYAnchor.constraintEqualToAnchor(self.rightView.centerYAnchor, constant: 100).active = true
-        self.fruitsImg.heightAnchor.constraintEqualToConstant(140).active = true
-        self.fruitsImg.widthAnchor.constraintEqualToConstant(140).active = true
+        self.fruitsImg.centerXAnchor.constraint(equalTo: self.rightView.centerXAnchor).isActive = true
+        self.fruitsImg.centerYAnchor.constraint(equalTo: self.rightView.centerYAnchor, constant: 100).isActive = true
+        self.fruitsImg.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        self.fruitsImg.widthAnchor.constraint(equalToConstant: 140).isActive = true
         
-        self.view.layoutIfNeeded()
+        //self.view.layoutIfNeeded()
     }
     
     func setZPositions() {
-        self.textView.textAlignment = .Center
+        self.textView.textAlignment = .center
         self.logoImg.layer.zPosition = 2
         self.leftView.layer.zPosition = 1
         self.rightView.layer.zPosition = 1
@@ -111,24 +103,24 @@ class ChoiceViewController: UIViewController {
         // set tap action for animals image
         let animalsImageView = self.leftView
         let tapAnimalsGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.animalsImageTapped(_:)))
-        animalsImageView.userInteractionEnabled = true
-        animalsImageView.addGestureRecognizer(tapAnimalsGestureRecognizer)
+        animalsImageView?.isUserInteractionEnabled = true
+        animalsImageView?.addGestureRecognizer(tapAnimalsGestureRecognizer)
         
         // set tap action for numbers image
         let numbersImageView = self.rightView
         let tapFruitsGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(ChoiceViewController.fruitsImageTapped(_:)))
-        numbersImageView.userInteractionEnabled = true
-        numbersImageView.addGestureRecognizer(tapFruitsGestureRecognizer)
+        numbersImageView?.isUserInteractionEnabled = true
+        numbersImageView?.addGestureRecognizer(tapFruitsGestureRecognizer)
     }
     
-    func animalsImageTapped(img: AnyObject) {
-        let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AnimalsViewController")
-        self.presentViewController(nextViewController, animated:true, completion:nil)
+    func animalsImageTapped(_ img: AnyObject) {
+        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "AnimalsViewController")
+        self.present(nextViewController, animated:true, completion:nil)
     }
 
-    func fruitsImageTapped(img: AnyObject) {
-        let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("FruitsViewController")
-        self.presentViewController(nextViewController, animated:true, completion:nil)
+    func fruitsImageTapped(_ img: AnyObject) {
+        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "FruitsViewController")
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     override func didReceiveMemoryWarning() {

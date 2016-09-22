@@ -39,7 +39,7 @@ class AnimalsViewController: UIViewController {
     var isAnimationGoing: Bool = false
     
     let maxIndexZ: CGFloat = 5
-    var backgroundColor: UIColor = UIColor.whiteColor()
+    var backgroundColor: UIColor = UIColor.white
     
     var cualaPositionX: CGFloat = 0
     var cualaPositionY: CGFloat = 0
@@ -64,85 +64,88 @@ class AnimalsViewController: UIViewController {
         
         let heightOfGameArea = self.wrapperView.frame.height - 64
         
+        //reset storyboard constraints
+        self.view.removeConstraints(self.view.constraints)
+        
         // menu bar up top
         self.menuBar.removeConstraints(self.menuBar.constraints)
         self.menuBar.translatesAutoresizingMaskIntoConstraints = false
-        self.menuBar.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20).active = true
-        self.menuBar.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
-        self.menuBar.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
-        self.menuBar.heightAnchor.constraintEqualToConstant(44).active = true
+        self.menuBar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+        self.menuBar.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.menuBar.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        self.menuBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         // kuala
         self.cuala.removeConstraints(self.cuala.constraints)
         self.cuala.translatesAutoresizingMaskIntoConstraints = false
-        self.cuala.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
-        self.cuala.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
-        self.cuala.heightAnchor.constraintEqualToConstant(70).active = true
-        self.cuala.widthAnchor.constraintEqualToConstant(110).active = true
+        self.cuala.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).isActive = true
+        self.cuala.centerXAnchor.constraint(equalTo: self.view.leftAnchor, constant: 65).isActive = true
+        self.cuala.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        self.cuala.widthAnchor.constraint(equalToConstant: 110).isActive = true
        
         // chicken
         self.chicken.removeConstraints(self.chicken.constraints)
         self.chicken.translatesAutoresizingMaskIntoConstraints = false
-        self.chicken.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
-        self.chicken.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
-        self.chicken.heightAnchor.constraintEqualToConstant(71).active = true
-        self.chicken.widthAnchor.constraintEqualToConstant(71).active = true
+        self.chicken.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).isActive = true
+        self.chicken.centerXAnchor.constraint(equalTo: self.view.leftAnchor, constant: 65).isActive = true
+        self.chicken.heightAnchor.constraint(equalToConstant: 71).isActive = true
+        self.chicken.widthAnchor.constraint(equalToConstant: 71).isActive = true
         
         // crocodile
         self.crocodile.removeConstraints(self.crocodile.constraints)
         self.crocodile.translatesAutoresizingMaskIntoConstraints = false
-        self.crocodile.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
-        self.crocodile.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
-        self.crocodile.heightAnchor.constraintEqualToConstant(77).active = true
-        self.crocodile.widthAnchor.constraintEqualToConstant(76).active = true
+        self.crocodile.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).isActive = true
+        self.crocodile.centerXAnchor.constraint(equalTo: self.view.leftAnchor, constant: 65).isActive = true
+        self.crocodile.heightAnchor.constraint(equalToConstant: 77).isActive = true
+        self.crocodile.widthAnchor.constraint(equalToConstant: 76).isActive = true
         
         // raccoon
         self.raccoon.removeConstraints(self.raccoon.constraints)
         self.raccoon.translatesAutoresizingMaskIntoConstraints = false
-        self.raccoon.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
-        self.raccoon.centerXAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 65).active = true
-        self.raccoon.heightAnchor.constraintEqualToConstant(70).active = true
-        self.raccoon.widthAnchor.constraintEqualToConstant(75).active = true
+        self.raccoon.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).isActive = true
+        self.raccoon.centerXAnchor.constraint(equalTo: self.view.leftAnchor, constant: 65).isActive = true
+        self.raccoon.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        self.raccoon.widthAnchor.constraint(equalToConstant: 75).isActive = true
         
         // kuala shadow
         self.cualaShadow.removeConstraints(self.cualaShadow.constraints)
         self.cualaShadow.translatesAutoresizingMaskIntoConstraints = false
-        self.cualaShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).active = true
-        self.cualaShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
-        self.cualaShadow.heightAnchor.constraintEqualToConstant(70).active = true
-        self.cualaShadow.widthAnchor.constraintEqualToConstant(110).active = true
+        self.cualaShadow.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.2 * -1).isActive = true
+        self.cualaShadow.centerXAnchor.constraint(equalTo: self.view.rightAnchor, constant: -65).isActive = true
+        self.cualaShadow.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        self.cualaShadow.widthAnchor.constraint(equalToConstant: 110).isActive = true
         
         //chicken shadow
         self.chickenShadow.removeConstraints(self.chickenShadow.constraints)
         self.chickenShadow.translatesAutoresizingMaskIntoConstraints = false
-        self.chickenShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).active = true
-        self.chickenShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
-        self.chickenShadow.heightAnchor.constraintEqualToConstant(71).active = true
-        self.chickenShadow.widthAnchor.constraintEqualToConstant(71).active = true
+        self.chickenShadow.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.4 * -1).isActive = true
+        self.chickenShadow.centerXAnchor.constraint(equalTo: self.view.rightAnchor, constant: -65).isActive = true
+        self.chickenShadow.heightAnchor.constraint(equalToConstant: 71).isActive = true
+        self.chickenShadow.widthAnchor.constraint(equalToConstant: 71).isActive = true
         
         // crocodile shadow
         self.crocodileShadow.removeConstraints(self.crocodileShadow.constraints)
         self.crocodileShadow.translatesAutoresizingMaskIntoConstraints = false
-        self.crocodileShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).active = true
-        self.crocodileShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
-        self.crocodileShadow.heightAnchor.constraintEqualToConstant(77).active = true
-        self.crocodileShadow.widthAnchor.constraintEqualToConstant(76).active = true
+        self.crocodileShadow.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.8 * -1).isActive = true
+        self.crocodileShadow.centerXAnchor.constraint(equalTo: self.view.rightAnchor, constant: -65).isActive = true
+        self.crocodileShadow.heightAnchor.constraint(equalToConstant: 77).isActive = true
+        self.crocodileShadow.widthAnchor.constraint(equalToConstant: 76).isActive = true
         
         // raccoon shadow
         self.raccoonShadow.removeConstraints(self.raccoonShadow.constraints)
         self.raccoonShadow.translatesAutoresizingMaskIntoConstraints = false
-        self.raccoonShadow.centerYAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).active = true
-        self.raccoonShadow.centerXAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -65).active = true
-        self.raccoonShadow.heightAnchor.constraintEqualToConstant(70).active = true
-        self.raccoonShadow.widthAnchor.constraintEqualToConstant(75).active = true
+        self.raccoonShadow.centerYAnchor.constraint(equalTo: self.view.bottomAnchor, constant: heightOfGameArea * 0.6 * -1).isActive = true
+        self.raccoonShadow.centerXAnchor.constraint(equalTo: self.view.rightAnchor, constant: -65).isActive = true
+        self.raccoonShadow.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        self.raccoonShadow.widthAnchor.constraint(equalToConstant: 75).isActive = true
         
         //  great Job Star
         self.greatJobImg.removeConstraints(greatJobImg.constraints)
         self.greatJobImg.translatesAutoresizingMaskIntoConstraints = false
-        self.greatJobImg.centerXAnchor.constraintEqualToAnchor(self.wrapperView.centerXAnchor).active = true
-        self.greatJobImg.centerYAnchor.constraintEqualToAnchor(self.wrapperView.centerYAnchor).active = true
-        self.greatJobImg.heightAnchor.constraintEqualToConstant(200).active = true
-        self.greatJobImg.widthAnchor.constraintEqualToConstant(200).active = true
+        self.greatJobImg.centerXAnchor.constraint(equalTo: self.wrapperView.centerXAnchor).isActive = true
+        self.greatJobImg.centerYAnchor.constraint(equalTo: self.wrapperView.centerYAnchor).isActive = true
+        self.greatJobImg.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        self.greatJobImg.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
     func setDefaultPositions() {
@@ -167,15 +170,15 @@ class AnimalsViewController: UIViewController {
     func setInitialTriggers() {
         
         // showing images and hidding "Great Job" star
-        self.greatJobImg.hidden = true
-        self.cualaShadow.hidden = false
-        self.crocodileShadow.hidden = false
-        self.raccoonShadow.hidden = false
-        self.chickenShadow.hidden = false
-        self.cuala.hidden = false
-        self.crocodile.hidden = false
-        self.chicken.hidden = false
-        self.raccoon.hidden = false
+        self.greatJobImg.isHidden = true
+        self.cualaShadow.isHidden = false
+        self.crocodileShadow.isHidden = false
+        self.raccoonShadow.isHidden = false
+        self.chickenShadow.isHidden = false
+        self.cuala.isHidden = false
+        self.crocodile.isHidden = false
+        self.chicken.isHidden = false
+        self.raccoon.isHidden = false
         
         self.isCualaMoving = false
         self.isChickenMoving = false
@@ -191,10 +194,10 @@ class AnimalsViewController: UIViewController {
         self.isAnimationGoing = false
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
-            let location = touch.locationInView(self.view)
+            let location = touch.location(in: self.view)
            
             if self.cuala.frame.contains(location) && !isCualaMatch {
                 self.cuala.center = location
@@ -227,10 +230,10 @@ class AnimalsViewController: UIViewController {
     }
     
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
-            let location = touch.locationInView(self.view)
+            let location = touch.location(in: self.view)
             
             if self.cuala.frame.contains(location) && self.isCualaMoving {
                 self.cuala.center = location
@@ -250,7 +253,7 @@ class AnimalsViewController: UIViewController {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.checkCollisions()
         
@@ -273,37 +276,37 @@ class AnimalsViewController: UIViewController {
         // called after touches ended
         
         // if animal image matchs with it's shadow
-        if CGRectIntersectsRect(chicken.frame, chickenShadow.frame) {
+        if chicken.frame.intersects(chickenShadow.frame) {
             self.chicken.center = self.chickenShadow.center
-            self.chickenShadow.hidden = true
+            self.chickenShadow.isHidden = true
             self.isChickenMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(cuala.frame, cualaShadow.frame) {
+        if cuala.frame.intersects(cualaShadow.frame) {
             self.cuala.center = self.cualaShadow.center
-            self.cualaShadow.hidden = true
+            self.cualaShadow.isHidden = true
             self.isCualaMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(crocodile.frame, crocodileShadow.frame) {
+        if crocodile.frame.intersects(crocodileShadow.frame) {
             self.crocodile.center = self.crocodileShadow.center
-            self.crocodileShadow.hidden = true
+            self.crocodileShadow.isHidden = true
             self.isCrocodileMatch = true
             self.matchValidation()
         }
         
-        if CGRectIntersectsRect(raccoon.frame, raccoonShadow.frame) {
+        if raccoon.frame.intersects(raccoonShadow.frame) {
             self.raccoon.center = self.raccoonShadow.center
-            self.raccoonShadow.hidden = true
+            self.raccoonShadow.isHidden = true
             self.isRaccoonMatch = true
             self.matchValidation()
         }
         
         
         // if animal image does not match with shadow, push image back to it's respond place
-        if CGRectIntersectsRect(cuala.frame, crocodileShadow.frame) || CGRectIntersectsRect(cuala.frame, raccoonShadow.frame) || CGRectIntersectsRect(cuala.frame, chickenShadow.frame) {
+        if cuala.frame.intersects(crocodileShadow.frame) || cuala.frame.intersects(raccoonShadow.frame) || cuala.frame.intersects(chickenShadow.frame) {
             
             print("\(self.cualaPositionX) ")
             print("\(self.cualaPositionY) ")
@@ -315,17 +318,17 @@ class AnimalsViewController: UIViewController {
             print("\(self.cualaPositionY) ")
         }
         
-        if CGRectIntersectsRect(crocodile.frame, cualaShadow.frame) || CGRectIntersectsRect(crocodile.frame, raccoonShadow.frame) || CGRectIntersectsRect(crocodile.frame, chickenShadow.frame) {
+        if crocodile.frame.intersects(cualaShadow.frame) || crocodile.frame.intersects(raccoonShadow.frame) || crocodile.frame.intersects(chickenShadow.frame) {
             self.crocodile.frame.origin.x = self.crocodilePositionX
             self.crocodile.frame.origin.y = self.crocodilePositionY
         }
         
-        if CGRectIntersectsRect(raccoon.frame, cualaShadow.frame) || CGRectIntersectsRect(raccoon.frame, crocodileShadow.frame) || CGRectIntersectsRect(raccoon.frame, chickenShadow.frame) {
+        if raccoon.frame.intersects(cualaShadow.frame) || raccoon.frame.intersects(crocodileShadow.frame) || raccoon.frame.intersects(chickenShadow.frame) {
             self.raccoon.frame.origin.x = self.raccoonPositionX
             self.raccoon.frame.origin.y = self.raccoonPositionY
         }
         
-        if CGRectIntersectsRect(chicken.frame, cualaShadow.frame) || CGRectIntersectsRect(chicken.frame, crocodileShadow.frame) || CGRectIntersectsRect(chicken.frame, raccoonShadow.frame) {
+        if chicken.frame.intersects(cualaShadow.frame) || chicken.frame.intersects(crocodileShadow.frame) || chicken.frame.intersects(raccoonShadow.frame) {
             self.chicken.frame.origin.x = self.chickenPositionX
             self.chicken.frame.origin.y = self.chickenPositionY
         }
@@ -339,16 +342,16 @@ class AnimalsViewController: UIViewController {
                 // animating screen background when all images match shadows
                 self.isAnimationGoing = true
                 
-                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                UIView.animate(withDuration: 0.2, animations: { () -> Void in
                     self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.4, blue: 0.4, alpha: 1)
-                }) { (Bool) -> Void in
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                }, completion: { (Bool) -> Void in
+                    UIView.animate(withDuration: 0.2, animations: { () -> Void in
                         self.wrapperView.backgroundColor = self.backgroundColor
                         }, completion: { (Bool) -> Void in
-                            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                            UIView.animate(withDuration: 0.2, animations: { () -> Void in
                                 self.wrapperView.backgroundColor = UIColor.init(red: 1, green: 0.4, blue: 0.4, alpha: 1)
                                 }, completion: { (Bool) -> Void in
-                                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                                    UIView.animate(withDuration: 0.2, animations: { () -> Void in
                                         self.wrapperView.backgroundColor = self.backgroundColor
                                         }, completion:nil)
                                     self.isAnimationGoing = false
@@ -356,20 +359,20 @@ class AnimalsViewController: UIViewController {
                     })
                     
                     
-                }
+                }) 
                 
                 // hide all images
-                self.cuala.hidden = true
-                self.crocodile.hidden = true
-                self.raccoon.hidden = true
-                self.chicken.hidden = true
-                self.chickenShadow.hidden = true
-                self.raccoonShadow.hidden = true
-                self.crocodileShadow.hidden = true
-                self.cualaShadow.hidden = true
+                self.cuala.isHidden = true
+                self.crocodile.isHidden = true
+                self.raccoon.isHidden = true
+                self.chicken.isHidden = true
+                self.chickenShadow.isHidden = true
+                self.raccoonShadow.isHidden = true
+                self.crocodileShadow.isHidden = true
+                self.cualaShadow.isHidden = true
                 
                 // show the star
-                self.greatJobImg.hidden = false
+                self.greatJobImg.isHidden = false
             }
         }
     }
@@ -378,11 +381,11 @@ class AnimalsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func doneButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonTapped(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func refreshButtonTapped(sender: AnyObject) {
+    @IBAction func refreshButtonTapped(_ sender: AnyObject) {
         self.setConstraints()
         self.setInitialTriggers()
     }
