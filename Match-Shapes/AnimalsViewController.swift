@@ -50,18 +50,22 @@ class AnimalsViewController: UIViewController {
     var raccoonPositionX: CGFloat = 0
     var raccoonPositionY: CGFloat = 0
     
+    var heightOfGameArea: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
-        self.setDefaultPositions()
         self.setInitialTriggers()
-        
         self.backgroundColor = self.wrapperView.backgroundColor!
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setDefaultPositions()
     }
     
     func setConstraints() {
         
-        let heightOfGameArea = self.wrapperView.frame.height - 64
+        heightOfGameArea = self.wrapperView.frame.height
         
         //reset storyboard constraints
         self.view.removeConstraints(self.view.constraints)
@@ -142,20 +146,14 @@ class AnimalsViewController: UIViewController {
     func setDefaultPositions() {
         // track respond position of an image
         // called after all constraints are set
-        print("\(self.cualaPositionX)  \(self.cuala.frame.origin.x)")
         self.cualaPositionX = self.cuala.frame.origin.x
-        print("\(self.cualaPositionY)  \(self.cuala.frame.origin.y)")
         self.cualaPositionY = self.cuala.frame.origin.y
-         print("\(self.cualaPositionX) ")
-         print("\(self.cualaPositionY) ")
-        
         self.chickenPositionX = self.chicken.frame.origin.x
         self.chickenPositionY = self.chicken.frame.origin.y
         self.crocodilePositionX = self.crocodile.frame.origin.x
         self.crocodilePositionY = self.crocodile.frame.origin.y
         self.raccoonPositionX = self.raccoon.frame.origin.x
         self.raccoonPositionY = self.raccoon.frame.origin.y
-        
     }
     
     func setInitialTriggers() {
@@ -298,15 +296,12 @@ class AnimalsViewController: UIViewController {
         
         // if animal image does not match with shadow, push image back to it's respond place
         if cuala.frame.intersects(crocodileShadow.frame) || cuala.frame.intersects(raccoonShadow.frame) || cuala.frame.intersects(chickenShadow.frame) {
-            
-            print("\(self.cualaPositionX) ")
-            print("\(self.cualaPositionY) ")
+            print("!! \(cuala.frame.origin.x) \(cuala.frame.origin.y)")
             
             self.cuala.frame.origin.x = self.cualaPositionX
             self.cuala.frame.origin.y = self.cualaPositionY
             
-            print("\(self.cualaPositionX) ")
-            print("\(self.cualaPositionY) ")
+            print("!! \(cuala.frame.origin.x) \(cuala.frame.origin.y)")
         }
         
         if crocodile.frame.intersects(cualaShadow.frame) || crocodile.frame.intersects(raccoonShadow.frame) || crocodile.frame.intersects(chickenShadow.frame) {
