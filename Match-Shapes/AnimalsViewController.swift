@@ -158,7 +158,6 @@ class AnimalsViewController: UIViewController {
     }
     
     func setInitialTriggers() {
-        
         // showing images and hidding "Great Job" star
         self.greatJobImg.isHidden = true
         self.cualaShadow.isHidden = false
@@ -215,6 +214,10 @@ class AnimalsViewController: UIViewController {
                 self.raccoon.layer.zPosition = self.maxIndexZ
                 self.isRaccoonMoving = true
                 return
+            }
+            
+            if self.greatJobImg.frame.contains(location) && !self.greatJobImg.isHidden {
+                dismiss(animated: true, completion: nil)
             }
         }
     }
