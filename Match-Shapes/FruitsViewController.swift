@@ -13,7 +13,6 @@ class FruitsViewController: UIViewController {
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     @IBOutlet weak var wrapperView: UIView!
-    @IBOutlet weak var menuBar: UINavigationBar!
     @IBOutlet weak var greatJobImg: UIImageView!
     
     @IBOutlet weak var avocadoImg: UIImageView!
@@ -74,14 +73,6 @@ class FruitsViewController: UIViewController {
         self.wrapperView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.wrapperView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         self.wrapperView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-        
-        // menu bar up top
-        self.menuBar.removeConstraints(self.menuBar.constraints)
-        self.menuBar.translatesAutoresizingMaskIntoConstraints = false
-        self.menuBar.topAnchor.constraint(equalTo: self.wrapperView.topAnchor, constant: 20).isActive = true
-        self.menuBar.leftAnchor.constraint(equalTo: self.wrapperView.leftAnchor).isActive = true
-        self.menuBar.widthAnchor.constraint(equalTo: self.wrapperView.widthAnchor).isActive = true
-        self.menuBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         // avocado
         self.avocadoImg.removeConstraints(self.avocadoImg.constraints)
@@ -382,13 +373,5 @@ class FruitsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func doneButtonTapped(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
-    @IBAction func refreshButtonTapped(_ sender: AnyObject) {
-        print("WORKS")
-        self.setConstraints()
-        self.setInitialTriggers()
-    }
 }

@@ -12,7 +12,7 @@ class AnimalsViewController: UIViewController {
 
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-    @IBOutlet weak var menuBar: UINavigationBar!
+    
     @IBOutlet var wrapperView: UIView!
     @IBOutlet weak var greatJobImg: UIImageView!
     
@@ -57,7 +57,6 @@ class AnimalsViewController: UIViewController {
         self.setInitialTriggers()
         
         self.backgroundColor = self.wrapperView.backgroundColor!
-        self.menuBar.backgroundColor = self.backgroundColor
     }
     
     func setConstraints() {
@@ -66,14 +65,6 @@ class AnimalsViewController: UIViewController {
         
         //reset storyboard constraints
         self.view.removeConstraints(self.view.constraints)
-        
-        // menu bar up top
-        self.menuBar.removeConstraints(self.menuBar.constraints)
-        self.menuBar.translatesAutoresizingMaskIntoConstraints = false
-        self.menuBar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
-        self.menuBar.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.menuBar.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-        self.menuBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         // kuala
         self.cuala.removeConstraints(self.cuala.constraints)
@@ -381,13 +372,5 @@ class AnimalsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func doneButtonTapped(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func refreshButtonTapped(_ sender: AnyObject) {
-        self.setConstraints()
-        self.setInitialTriggers()
-    }
 }
 
