@@ -49,19 +49,24 @@ class FruitsViewController: UIViewController {
     var berryPositionX: CGFloat = 0
     var berryPositionY: CGFloat = 0
     
+    var heightOfGameArea: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setConstraints()
-        self.setDefaultPositions()
         self.setInitialTriggers()
         
         self.backgroundColor = self.wrapperView.backgroundColor!
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.setDefaultPositions()
+    }
+    
     func setConstraints() {
         
-        let heightOfGameArea = self.view.frame.height - 64
+        heightOfGameArea = self.view.frame.height
         
         //reset storyboard constraints
         self.view.removeConstraints(self.view.constraints)
@@ -305,26 +310,22 @@ class FruitsViewController: UIViewController {
         
         if avocadoImg.frame.intersects(orangeShadowImg.frame) || avocadoImg.frame.intersects(fruitShadowImg.frame) || avocadoImg.frame.intersects(berryShadowImg.frame) {
             self.avocadoImg.frame.origin.x = self.avocadoPositionX
-            self.avocadoImg.frame.origin.y = self.avocadoPositionY + 64
-            print("avocado \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
+            self.avocadoImg.frame.origin.y = self.avocadoPositionY
         }
         
         if orangeImg.frame.intersects(avocadoShadowImg.frame) || orangeImg.frame.intersects(fruitShadowImg.frame) || orangeImg.frame.intersects(berryShadowImg.frame) {
             self.orangeImg.frame.origin.x = self.orangePositionX
-            self.orangeImg.frame.origin.y = self.orangePositionY + 64
-            print("orange \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
+            self.orangeImg.frame.origin.y = self.orangePositionY
         }
         
         if fruitImg.frame.intersects(avocadoShadowImg.frame) || fruitImg.frame.intersects(orangeShadowImg.frame) || fruitImg.frame.intersects(berryShadowImg.frame) {
             self.fruitImg.frame.origin.x = self.fruitPositionX
-            self.fruitImg.frame.origin.y = self.fruitPositionY + 64
-            print("fruit \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
+            self.fruitImg.frame.origin.y = self.fruitPositionY
         }
         
         if berryImg.frame.intersects(avocadoShadowImg.frame) || berryImg.frame.intersects(orangeShadowImg.frame) || berryImg.frame.intersects(fruitShadowImg.frame) {
             self.berryImg.frame.origin.x = self.berryPositionX
-            self.berryImg.frame.origin.y = self.berryPositionY + 64
-            print("berry \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
+            self.berryImg.frame.origin.y = self.berryPositionY
         }
     }
     
