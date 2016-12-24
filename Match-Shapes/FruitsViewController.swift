@@ -163,10 +163,6 @@ class FruitsViewController: UIViewController {
         self.fruitPositionY = self.fruitImg.frame.origin.y
         self.berryPositionX = self.berryImg.frame.origin.x
         self.berryPositionY = self.berryImg.frame.origin.y
-        print("AVOCADO \(self.avocadoImg.frame.origin.x) \(self.avocadoImg.frame.origin.y)")
-        print("ORANGE \(self.orangeImg.frame.origin.x) \(self.orangeImg.frame.origin.y)")
-        print("FRUIT \(self.fruitImg.frame.origin.x) \(self.fruitImg.frame.origin.y)")
-        print("BERRY \(self.berryImg.frame.origin.x) \(self.berryImg.frame.origin.y)")
     }
     
     func setInitialTriggers() {
@@ -227,6 +223,10 @@ class FruitsViewController: UIViewController {
                 self.berryImg.layer.zPosition = self.maxIndexZ
                 self.isBerryMoving = true
                 return
+            }
+            
+            if self.greatJobImg.frame.contains(location) && !self.greatJobImg.isHidden {
+                dismiss(animated: true, completion: nil)
             }
         }
     }
